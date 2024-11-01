@@ -1,7 +1,7 @@
 extends Node
-class_name AsteroidSpawnerSystem
+class_name EnemySpawnerSystem
 
-@export var AsteroidPrefab : PackedScene
+@export var EyeballPrefab : PackedScene
 @onready var RandomNumber : RandomNumberGenerator = RandomNumberGenerator.new()
 
 
@@ -26,7 +26,7 @@ func tick(delta: float, target_container:Node, game_controller:Game) -> void:
 
 
 func spawn_asteroid(target_container:Node) -> void:
-	var new_asteroid = AsteroidPrefab.instantiate() as Asteroid
+	var new_asteroid = EyeballPrefab.instantiate() as Eyeball
 	
 	# Randomize size by changing scale
 	# Can't scale rigidbody2d directly, instead sclae CollisionShape2D

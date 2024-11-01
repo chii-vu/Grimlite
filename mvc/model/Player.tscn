@@ -138,12 +138,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="RigidBody2D"]
-gravity_scale = 0.0
-can_sleep = false
-contact_monitor = true
-max_contacts_reported = 2
-angular_damp = 6.0
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_i0ayj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

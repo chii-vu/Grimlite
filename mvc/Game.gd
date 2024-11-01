@@ -2,21 +2,22 @@ extends Node
 class_name Game
 
 # This is the main 'controller' class
-
 @onready var local_player : Player = $LocalPlayer
-@onready var asteroids : Node2D = $AsteroidsHolderNode
-@onready var bullets : Node2D = $BulletsHolderNode
-@onready var asteroid_spawner_system : AsteroidSpawnerSystem = $AsteroidSpawnerSystem
+@onready var asteroids : Node2D = $EnemyHolderNode
+@onready var bullets : Node2D = $WeaponsHolderNode
+@onready var asteroid_spawner_system : EnemySpawnerSystem = $EnemySpawnerSystem
 
 @export var PlayerWarpTime : float = 5
 @export var BackwardsBulletThurst : float = 50
 @export var RotationSpeed : float = 3000.0
-@export var BulletPrefab : PackedScene
+@export var WhipPrefab : PackedScene
 
 func _ready() -> void:
 	# hookup the signal / custom callback for player hitting asteroids
 	# i prefer to do this in code...
-	local_player.body_entered.connect(self._on_asteroid_hit_local_player)
+	
+	# local_player.body_entered.connect(self._on_asteroid_hit_local_player)
+	pass
 
 func _physics_process(delta: float) -> void:
 	# I like 'tick_game' better than physics process,
@@ -82,7 +83,7 @@ func _shoot(player:Player) -> void:
 	player.apply_central_impulse(dir * BackwardsBulletThurst)
 	
 	# SPAWN BULLET
-	var new_bullet : Bullet = BulletPrefab.instantiate() as Bullet
+	var new_bullet : Whip = WhipPrefab.instantiate() as Whip
 	bullets.add_child(new_bullet)
 	
 	# ( pass the bullet as well )
@@ -108,11 +109,11 @@ func _on_asteroid_hit_local_player(asteroid:Node) -> void:
 		local_player.Dead = true
 		local_player.RespawnCounter = 5.0
 
-func _on_bullet_hit(hit_node:Node, bullet:Bullet) -> void:
+func _on_bullet_hit(hit_node:Node, bullet:Whip) -> void:
 	print("_on_bullet_hit")
-	if hit_node is Asteroid:
+	if hit_node is Eyeball:
 		# hit_node is an asteroid
-		print("bullet hit asteroid")
+		print("bullet hit eyeball")
 		# delete both
 		hit_node.queue_free()
 		bullet.queue_free()

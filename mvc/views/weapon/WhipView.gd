@@ -1,5 +1,5 @@
 extends Node2D
-class_name BulletView
+class_name WhipView
 
 
 # Called when the node enters the scene tree for the first time.

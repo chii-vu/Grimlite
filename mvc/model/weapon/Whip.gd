@@ -1,2 +1,2 @@
 extends RigidBody2D
-class_name Bullet
+class_name Whip
