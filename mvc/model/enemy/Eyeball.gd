@@ -1,15 +1,11 @@
 extends RigidBody2D
 class_name Eyeball
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@export var speed: float = 100.0
+var player_position: Vector2 = Vector2.ZERO
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-
-func body_entered(node : Node ) -> void:
-	print("ASDFASDF")
+	if player_position:
+		# Calculate direction toward player and move in that direction
+		var direction = (player_position - position).normalized()
+		linear_velocity = direction * speed
