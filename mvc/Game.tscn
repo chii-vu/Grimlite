@@ -10,7 +10,7 @@ script = ExtResource("1_sb6n7")
 
 [node name="EnemySpawnerSystem" type="Node" parent="."]
 script = ExtResource("3_mvaxx")
-EyeballPrefab = ExtResource("4_xhn5g")
+enemy_prefab = ExtResource("4_xhn5g")
 
 [node name="Player" parent="." instance=ExtResource("5_f3cu6")]
 motion_mode = 1
