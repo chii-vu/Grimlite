@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://mvc/model/enemy/Eyeball.gd" id="1_23g8y"]
 [ext_resource type="Script" path="res://mvc/views/enemy/EyeballView.gd" id="2_rptv8"]
-[ext_resource type="Texture2D" uid="uid://cd35e3g7cv1o6" path="res://assets/Asteroid.png" id="3_ky6s5"]
+[ext_resource type="Texture2D" uid="uid://l177nu3q3rqk" path="res://assets/eye_sprite.png" id="3_pf721"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ywl"]
 size = Vector2(69, 87)
@@ -22,6 +22,5 @@ shape = SubResource("RectangleShape2D_o5ywl")
 script = ExtResource("2_rptv8")
 
 [node name="Sprite2D" type="Sprite2D" parent="AsteroidView"]
-modulate = Color(1, 0.396078, 0.258824, 1)
 position = Vector2(-1.12057e-05, -4.76837e-07)
-texture = ExtResource("3_ky6s5")
+texture = ExtResource("3_pf721")
