@@ -2,7 +2,7 @@ extends Node
 class_name Game
 
 @onready var player: Player = $Player  # Reference to the Player node
-@onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawner  # Reference to the enemy spawner
+@onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
 @export var player_speed: float = 200.0  # Speed of player movement
 @export var attack_interval: float = 1.5  # Interval for automatic attacks
 
