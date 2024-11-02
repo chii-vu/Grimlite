@@ -8,6 +8,3 @@ func sfx_bullet() -> void:
 	
 func sfx_explosion() -> void:
 	$Explosion.play()
-
-func sfx_warp() -> void:
-	$Explosion.play()
