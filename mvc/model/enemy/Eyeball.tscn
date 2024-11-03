@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf87butm262kw"]
+
+[ext_resource type="Script" path="res://mvc/model/enemy/Eyeball.gd" id="1_23g8y"]
+[ext_resource type="Script" path="res://mvc/views/enemy/EyeballView.gd" id="2_rptv8"]
+[ext_resource type="Texture2D" uid="uid://bpaxlph7sgwo6" path="res://assets/eye_sprite.png" id="3_pf721"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ywl"]
+size = Vector2(81.5354, 124.306)
+
+[node name="Eyeball" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_23g8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -10)
+rotation = -0.00374262
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_o5ywl")
+
+[node name="EyeballView" type="Node2D" parent="."]
+script = ExtResource("2_rptv8")
+
+[node name="Sprite2D" type="Sprite2D" parent="EyeballView"]
+position = Vector2(-1.12057e-05, -4.76837e-07)
+texture = ExtResource("3_pf721")
