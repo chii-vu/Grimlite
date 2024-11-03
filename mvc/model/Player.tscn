@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://mvc/model/Player.gd" id="1_i0ayj"]
 [ext_resource type="Script" path="res://mvc/views/PlayerView.gd" id="3_1kh2r"]
 [ext_resource type="Texture2D" uid="uid://b45ooahysl3ww" path="res://assets/PlayerShip Spritesheet (32x32, 17 frames).png" id="3_u3t4c"]
-[ext_resource type="Texture2D" uid="uid://dh0afckkcfn3m" path="res://assets/player_placeholder.png" id="4_2sqa5"]
+[ext_resource type="Texture2D" uid="uid://dm5eqr6vcwocx" path="res://assets/player_placeholder.png" id="4_2sqa5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc60u"]
 size = Vector2(8, 37)
@@ -139,6 +139,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_rjgqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_qal3g"]
 resource_name = "walk_left"
 loop_mode = 1
@@ -171,21 +186,6 @@ tracks/0/keys = {
 "values": [0, 0]
 }
 
-[sub_resource type="Animation" id="Animation_rjgqi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_208ts"]
 _data = {
 "RESET": SubResource("Animation_rjgqi"),
@@ -213,7 +213,6 @@ texture_filter = 1
 texture_repeat = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_byemn")
-animation = &"Idle"
 animation = &"Warp"
 speed_scale = 3.0
 
