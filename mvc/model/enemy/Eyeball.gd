@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 		# Continuously move toward the player’s current position
 		var direction = (player.position - position).normalized()
 		position += direction * speed * delta
+		
+		var facing = (player.position-position)
+		if facing.y < 0 :
+			$EyeballView/Sprite2D/AnimationPlayer.play("move_right")
+		else:
+			$EyeballView/Sprite2D/AnimationPlayer.play("move_left")
