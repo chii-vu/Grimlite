@@ -1,14 +1,19 @@
+# EyeballView.gd
 extends Node2D
 class_name EyeballView
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var player: Player  # Reference to the Player node
 
-# Called when the node exits the scene tree
-func _exit_tree() -> void:
-	GlobalSoundsManager.sfx_explosion()
+func set_player(player_ref: Player) -> void:
+	player = player_ref
+	if player:
+		print("Player reference set in EyeballView:", player)
+	else:
+		print("Player reference is null in EyeballView.")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if player:
+		# Update any visual elements based on the player's position if needed
+		pass
+	else:
+		print("Player reference is null in EyeballView.")

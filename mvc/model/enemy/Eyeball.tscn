@@ -1,26 +1,126 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf87butm262kw"]
+[gd_scene load_steps=11 format=3 uid="uid://bf87butm262kw"]
 
 [ext_resource type="Script" path="res://mvc/model/enemy/Eyeball.gd" id="1_23g8y"]
 [ext_resource type="Script" path="res://mvc/views/enemy/EyeballView.gd" id="2_rptv8"]
-[ext_resource type="Texture2D" uid="uid://bpaxlph7sgwo6" path="res://assets/eye_sprite.png" id="3_pf721"]
+[ext_resource type="Texture2D" uid="uid://c6ki6g53g8ep1" path="res://assets/eye_sprite_prototype_sheet.png" id="3_ub404"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5ywl"]
-size = Vector2(81.5354, 124.306)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ara7t"]
+radius = 21.4999
+height = 80.0107
+
+[sub_resource type="Animation" id="Animation_cbdjs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_b88u7"]
+resource_name = "death_left"
+length = 0.1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [9, 9]
+}
+
+[sub_resource type="Animation" id="Animation_wlimf"]
+resource_name = "death_right"
+length = 0.1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 4]
+}
+
+[sub_resource type="Animation" id="Animation_sv8i4"]
+resource_name = "move_left"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.231779, 0.25, 0.478099, 0.5, 0.731779, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2, 3, 3]
+}
+
+[sub_resource type="Animation" id="Animation_5nfod"]
+resource_name = "move_right"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.248188, 0.262618, 0.485627, 0.5, 0.734665, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 5, 6, 6, 7, 7, 8, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kx26"]
+_data = {
+"RESET": SubResource("Animation_cbdjs"),
+"death_left": SubResource("Animation_b88u7"),
+"death_right": SubResource("Animation_wlimf"),
+"move_left": SubResource("Animation_sv8i4"),
+"move_right": SubResource("Animation_5nfod")
+}
 
 [node name="Eyeball" type="Area2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_23g8y")
+speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -10)
+position = Vector2(-0.5, 9.53674e-07)
 rotation = -0.00374262
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_o5ywl")
+shape = SubResource("CapsuleShape2D_ara7t")
 
 [node name="EyeballView" type="Node2D" parent="."]
 script = ExtResource("2_rptv8")
 
 [node name="Sprite2D" type="Sprite2D" parent="EyeballView"]
 position = Vector2(-1.12057e-05, -4.76837e-07)
-texture = ExtResource("3_pf721")
+texture = ExtResource("3_ub404")
+hframes = 5
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EyeballView/Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_3kx26")
+}
