@@ -12,6 +12,7 @@ func _ready() -> void:
 	# Set player reference in the enemy spawner system
 	if enemy_spawner:
 		enemy_spawner.set_player(player)
+		print("Player reference set in EnemySpawnerSystem:", player)
 	else:
 		print("Error: EnemySpawner not found. Check the node path.")
 

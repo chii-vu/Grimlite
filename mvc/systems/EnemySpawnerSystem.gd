@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 func set_player(player_ref: Player) -> void:
 	# Update the reference to the player
 	player = player_ref
+	print("Player reference set in EnemySpawnerSystem:", player)
 
 func get_active_enemy_count() -> int:
 	# Count enemies in the scene by checking the group
@@ -29,7 +30,7 @@ func _spawn_enemy() -> void:
 	if enemy_prefab == null:
 		print("Error: enemy_prefab is not set. Check Inspector settings.")
 		return
-	
+
 	var new_enemy = enemy_prefab.instantiate() as Area2D
 	if new_enemy == null:
 		print("Error: Failed to instantiate enemy from prefab.")
@@ -38,6 +39,9 @@ func _spawn_enemy() -> void:
 	# Set the player's reference for the enemy
 	if new_enemy.has_method("set_player"):
 		new_enemy.set_player(player)
+		print("Player reference passed to new enemy:", player)
+	else:
+		print("New enemy does not have set_player method.")
 
 	# Set a random spawn position outside the player's view
 	new_enemy.position = _get_random_spawn_position()
