@@ -1,3 +1,4 @@
+# EnemySpawnerSystem.gd
 extends Node
 class_name EnemySpawnerSystem
 
@@ -19,29 +20,24 @@ func _process(delta: float) -> void:
 func set_player(player_ref: Player) -> void:
 	# Update the reference to the player
 	player = player_ref
-	print("Player reference set in EnemySpawnerSystem:", player)
+	if player:
+		print("Player reference set in EnemySpawnerSystem:", player)
+	else:
+		print("Error: Player reference is null in set_player.")
 
 func get_active_enemy_count() -> int:
 	# Count enemies in the scene by checking the group
 	return get_tree().get_nodes_in_group("enemies").size()
 
 func _spawn_enemy() -> void:
-	# Spawn an enemy instance from the prefab
 	if enemy_prefab == null:
 		print("Error: enemy_prefab is not set. Check Inspector settings.")
 		return
-
-	var new_enemy = enemy_prefab.instantiate() as Area2D
+	
+	var new_enemy = enemy_prefab.instantiate() as Eyeball
 	if new_enemy == null:
 		print("Error: Failed to instantiate enemy from prefab.")
 		return
-
-	# Set the player's reference for the enemy
-	if new_enemy.has_method("set_player"):
-		new_enemy.set_player(player)
-		print("Player reference passed to new enemy:", player)
-	else:
-		print("New enemy does not have set_player method.")
 
 	# Set a random spawn position outside the player's view
 	new_enemy.position = _get_random_spawn_position()
@@ -50,17 +46,33 @@ func _spawn_enemy() -> void:
 	get_parent().add_child(new_enemy)
 	new_enemy.add_to_group("enemies")
 
+	# Now that the enemy is in the scene tree, set the player's reference
+	if new_enemy.has_method("set_player"):
+		new_enemy.set_player(player)
+
 func _get_random_spawn_position() -> Vector2:
 	# Generate a random position around the edges of the viewport
-	var screen_bounds = get_viewport().get_visible_rect().size / 2.0
+	var viewport_size = get_viewport().get_visible_rect().size
 	var spawn_position = Vector2()
 
 	# Randomly choose a position along the edge of the screen
-	if random.randi_range(0, 1) == 0:
-		spawn_position.x = random.randf_range(-screen_bounds.x, screen_bounds.x)
-		spawn_position.y = screen_bounds.y if random.randi_range(0, 1) == 0 else -screen_bounds.y
-	else:
-		spawn_position.y = random.randf_range(-screen_bounds.y, screen_bounds.y)
-		spawn_position.x = screen_bounds.x if random.randi_range(0, 1) == 0 else -screen_bounds.x
+	var edge = random.randi_range(0, 3)
+	match edge:
+		0:
+			# Top edge
+			spawn_position.x = random.randf_range(0, viewport_size.x)
+			spawn_position.y = -50
+		1:
+			# Bottom edge
+			spawn_position.x = random.randf_range(0, viewport_size.x)
+			spawn_position.y = viewport_size.y + 50
+		2:
+			# Left edge
+			spawn_position.x = -50
+			spawn_position.y = random.randf_range(0, viewport_size.y)
+		3:
+			# Right edge
+			spawn_position.x = viewport_size.x + 50
+			spawn_position.y = random.randf_range(0, viewport_size.y)
 
 	return spawn_position

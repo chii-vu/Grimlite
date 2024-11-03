@@ -1,3 +1,4 @@
+# Game.gd
 extends Node
 class_name Game
 
@@ -11,10 +12,15 @@ var attack_timer: float = 0.0
 func _ready() -> void:
 	# Set player reference in the enemy spawner system
 	if enemy_spawner:
+		print("EnemySpawner found. Setting player reference.")
 		enemy_spawner.set_player(player)
-		print("Player reference set in EnemySpawnerSystem:", player)
 	else:
 		print("Error: EnemySpawner not found. Check the node path.")
+	
+	if player:
+		print("Player is ready with position:", player.position)
+	else:
+		print("Error: Player node not found.")
 
 func _process(delta: float) -> void:
 	_handle_movement(delta)
@@ -34,7 +40,10 @@ func _handle_movement(delta: float) -> void:
 
 	# Normalize movement and apply speed
 	movement = movement.normalized() * player_speed * delta
-	player.position += movement
+	if player:
+		player.position += movement
+	else:
+		print("Error: Player reference is missing in _handle_movement.")
 
 func _handle_auto_attack(delta: float) -> void:
 	# Automatic attack logic
