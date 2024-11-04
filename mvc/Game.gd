@@ -41,13 +41,17 @@ func _handle_movement(delta: float) -> void:
 	var movement = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
 		movement.y -= 1
+		player.direction.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		movement.y += 1
+		player.direction.y += 1
 	if Input.is_action_pressed("ui_left"):
 		movement.x -= 1
+		player.direction.x -= 1
 		player_animation.move_left()
 	if Input.is_action_pressed("ui_right"):
 		movement.x += 1
+		player.direction.x += 1
 		player_animation.move_right()
 	
 	#need a way to tell when none of the ui directions are being pressed, so idle animation can play (below)
