@@ -11,3 +11,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Only play the "Idle" animation as we aren’t handling other states for now
 	animated_sprite.play("Idle")
+
+func move_left() -> void:
+	$Sprite2D/AnimationPlayer.play("walk_left")
+
+func move_right() -> void:
+	$Sprite2D/AnimationPlayer.play("walk_right")
+
+func no_input() -> void:
+	$Sprite2D/AnimationPlayer.pause()
