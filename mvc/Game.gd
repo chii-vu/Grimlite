@@ -2,10 +2,11 @@
 extends Node
 class_name Game
 
-@onready var player: Player = $Player  # Reference to the Player node
+@onready var player: Player = $LocalPlayer  # Reference to the Player node
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
-@onready var player_animation = $Player/PlayerView
+@onready var player_animation = $LocalPlayer/PlayerView
 @onready var hammer_animation = $Bullet/BulletView
+@onready var weapon_spawner: WeaponSpawnerSystem = $WeaponSpawnerSystem
 
 
 @export var player_speed: float = 200.0  # Player movement speed
@@ -19,6 +20,12 @@ func _ready() -> void:
 		enemy_spawner.set_player(player)
 	else:
 		print("Error: EnemySpawner not found. Check the node path.")
+	
+	if weapon_spawner:
+		print("WeaponSpawner found. Setting player reference.")
+		weapon_spawner.set_player(player)
+	else:
+		print("Error: WeaponSpawner not found. Check the node path.")
 	
 	if player:
 		print("Player is ready with position:", player.position)
