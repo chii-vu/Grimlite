@@ -4,6 +4,7 @@ class_name Game
 
 @onready var player: Player = $Player  # Reference to the Player node
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
+@onready var player_anims = $Player/PlayerView
 
 @export var player_speed: float = 200.0  # Player movement speed
 var attack_timer: float = 0.0
@@ -35,8 +36,11 @@ func _handle_movement(delta: float) -> void:
 		movement.y += 1
 	if Input.is_action_pressed("ui_left"):
 		movement.x -= 1
+		player_anims.move_left()
 	if Input.is_action_pressed("ui_right"):
 		movement.x += 1
+		player_anims.move_right()
+
 
 	# Normalize movement and apply speed
 	movement = movement.normalized() * player_speed * delta
