@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://lsgfp2mh8rop"]
 
 [ext_resource type="Script" path="res://mvc/Game.gd" id="1_sb6n7"]
-[ext_resource type="PackedScene" uid="uid://b2v4afte3a5lg" path="res://mvc/model/weapon/Whip.tscn" id="2_vfjbm"]
+[ext_resource type="PackedScene" uid="uid://b2v4afte3a5lg" path="res://mvc/model/weapon/Hammer.tscn" id="2_vfjbm"]
 [ext_resource type="Script" path="res://mvc/systems/EnemySpawnerSystem.gd" id="3_mvaxx"]
 [ext_resource type="Script" path="res://mvc/systems/WeaponSpawnerSystem.gd" id="4_rq8t2"]
 [ext_resource type="PackedScene" uid="uid://bf87butm262kw" path="res://mvc/model/enemy/Eyeball.tscn" id="4_xhn5g"]
@@ -9,8 +9,6 @@
 
 [node name="Game" type="Node"]
 script = ExtResource("1_sb6n7")
-player_speed = null
-attack_interval = null
 
 [node name="EnemySpawnerSystem" type="Node" parent="."]
 script = ExtResource("3_mvaxx")
@@ -19,8 +17,6 @@ enemy_prefab = ExtResource("4_xhn5g")
 [node name="WeaponSpawnerSystem" type="Node" parent="."]
 script = ExtResource("4_rq8t2")
 hammer_prefab = ExtResource("2_vfjbm")
-hammer_interval = null
-max_hammer = null
 
 [node name="LocalPlayer" parent="." instance=ExtResource("5_f3cu6")]
 collision_layer = 1
