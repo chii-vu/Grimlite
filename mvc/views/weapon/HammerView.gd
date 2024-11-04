@@ -1,5 +1,5 @@
 extends Node2D
-class_name WhipView
+class_name HammerView
 
 
 # Called when the node enters the scene tree for the first time.

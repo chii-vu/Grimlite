@@ -5,6 +5,8 @@
 [node name="GameplayScene" type="Node2D"]
 
 [node name="Game" parent="." instance=ExtResource("2_prymh")]
+player_speed = 200.0
+attack_interval = 1.5
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
