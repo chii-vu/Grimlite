@@ -4,7 +4,9 @@ class_name Game
 
 @onready var player: Player = $Player  # Reference to the Player node
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
-@onready var player_anims = $Player/PlayerView
+@onready var player_animation = $Player/PlayerView
+@onready var hammer_animation = $Bullet/BulletView
+
 
 @export var player_speed: float = 200.0  # Player movement speed
 var attack_timer: float = 0.0
@@ -36,10 +38,13 @@ func _handle_movement(delta: float) -> void:
 		movement.y += 1
 	if Input.is_action_pressed("ui_left"):
 		movement.x -= 1
-		player_anims.move_left()
+		player_animation.move_left()
 	if Input.is_action_pressed("ui_right"):
 		movement.x += 1
-		player_anims.move_right()
+		player_animation.move_right()
+	
+	#need a way to tell when none of the ui directions are being pressed, so idle animation can play (below)
+		#player_animation.no_input()
 
 
 	# Normalize movement and apply speed
@@ -58,4 +63,7 @@ func _handle_auto_attack(delta: float) -> void:
 
 func _auto_attack() -> void:
 	print("Automatic attack triggered")
+	
+	#hammer_animation.slam_effect()
+	
 	# Implement auto-attack logic, e.g., creating an attack area
