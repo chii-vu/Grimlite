@@ -11,3 +11,7 @@ func _process(delta: float) -> void:
 	
 	# doesn't really need to do anything special
 	pass
+
+
+func slam_effect() -> void:
+	$Sprite2D/AnimationPlayer.play("slam")
