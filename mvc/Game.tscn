@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bf87butm262kw" path="res://mvc/model/enemy/Eyeball.tscn" id="4_xhn5g"]
 [ext_resource type="PackedScene" uid="uid://x363ipybqtxk" path="res://mvc/model/Player.tscn" id="5_f3cu6"]
 
-[node name="Game" type="Node" groups=["bullets", "enemies", "hammers"]]
+[node name="Game" type="Node"]
 script = ExtResource("1_sb6n7")
 
 [node name="EnemySpawnerSystem" type="Node" parent="."]
