@@ -1,0 +1,38 @@
+Group 1: Lunar Labs
+Members: Finch Nygren (jmn211), Louis Grimard (aiq395), Spencer Tracy (spt631), Chi Vu (cpv616)
+
+
+Group Member Contributions:
+
+Finch (Art, Assets, Animations)
+
+- Completed prototype art for eyeball enemy.
+- Created animation frames for eyeball and entered them into the sprite sheet.
+- Created player character skin and animations.
+- Developed hammer animation graphics and spritesheet.
+- Added animation tracks for the eyeball enemy.
+- Created sketches of key frames for player walk cycle.
+
+Louis (MVC POLICE + Code Support + Scene Layout)
+
+- Used skeleton code from MVC demo as boilerplate.
+- Helped troubleshoot Git remote pushes and syncing issues.
+- Set up initial structure and scene layout for the project.
+- Discussed MVC structure in virtual meetings and Git workflow.
+- Paired with other members to debug EyeballView animations.
+
+Spencer (Code/Algorithms)
+- Implemented player movement and input map.
+- Updated monster spawn settings and synced changes.
+- Implemented enemy-seeking behavior and speed.
+- Fixed an unused sound bug.
+- Developed initial enemy-spawning functionality.
+- Set up player attack mechanics, including attack spawning and lifetime.
+
+Chi (QA/Project Planner)
+- Set up Git repository with permissions and added members.
+- Coordinated project meetings and planning.
+- Created and managed a burndown chart, logging all completed tasks.
+- Establish group's general workflow and Git branching strategy.
+- Record meeting minutes and track progress.
+- Test implemnted features and report bugs.
