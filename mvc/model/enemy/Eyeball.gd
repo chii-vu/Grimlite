@@ -1,5 +1,5 @@
 # Eyeball.gd
-extends Area2D
+extends CharacterBody2D
 class_name Eyeball
 
 @export var speed: float = 100.0
@@ -13,15 +13,10 @@ func _ready() -> void:
 func set_player(player_ref: Player) -> void:
 	player = player_ref
 	print("Player reference set in Eyeball:", player)
-
+	
 	if view:
 		view.set_player(player)  # Pass the player reference to EyeballView
 		print("Passing player reference to EyeballView.")
 	else:
 		print("Error: EyeballView not found as a child of Eyeball.")
-
-func _process(delta: float) -> void:
-	if player:
-		# Continuously move toward the player’s current position
-		var direction = (player.position - position).normalized()
-		position += direction * speed * delta
+		

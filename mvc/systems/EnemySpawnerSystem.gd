@@ -2,6 +2,11 @@
 extends Node
 class_name EnemySpawnerSystem
 
+## CONTAINS ENEMY LOGIC & SPAWNING ##
+
+# Enemy logic
+
+# Enemy spawning
 @export var enemy_prefab: PackedScene  # Prefab for spawning enemies
 @export var spawn_interval: float = 2.0  # Interval in seconds between spawns
 @export var max_enemies: int = 10  # Maximum number of active enemies
@@ -9,6 +14,21 @@ class_name EnemySpawnerSystem
 @onready var random = RandomNumberGenerator.new()
 var spawn_timer: float = 0.0
 var player: Player  # Reference to the player node
+
+#######################
+## ENEMY LOGIC BLOCK ##
+#######################
+
+func _physics_process(delta: float) -> void:
+	# process homing enemies (that path directly @ player
+	for nd in get_tree().get_nodes_in_group("homing enemy"):
+		nd.velocity = (player.position - nd.position).normalized() * nd.speed
+		nd.move_and_slide()
+	pass
+
+##########################
+## ENEMY SPAWNING BLOCK ##
+##########################
 
 func _process(delta: float) -> void:
 	spawn_timer += delta
@@ -38,14 +58,15 @@ func _spawn_enemy() -> void:
 	if new_enemy == null:
 		print("Error: Failed to instantiate enemy from prefab.")
 		return
-
+	
 	# Set a random spawn position outside the player's view
 	new_enemy.position = _get_random_spawn_position()
 
 	# Add the enemy to the scene tree and to a group for management
 	get_parent().add_child(new_enemy)
 	new_enemy.add_to_group("enemies")
-
+	new_enemy.add_to_group("homing enemy")
+	
 	# Now that the enemy is in the scene tree, set the player's reference
 	if new_enemy.has_method("set_player"):
 		new_enemy.set_player(player)
