@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gqstqcr0vjj0"
-path="res://.godot/imported/Hammer_effect_prototype.png-90aa20754eef8cf54f414c78e7052435.ctex"
+uid="uid://3mtwe6gnmci3"
+path="res://.godot/imported/test_hammer.png-786b2381dcf9ba75f7fb6f53c2fde4b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Hammer_effect_prototype.png"
-dest_files=["res://.godot/imported/Hammer_effect_prototype.png-90aa20754eef8cf54f414c78e7052435.ctex"]
+source_file="res://assets/test_hammer.png"
+dest_files=["res://.godot/imported/test_hammer.png-786b2381dcf9ba75f7fb6f53c2fde4b4.ctex"]
 
 [params]
 

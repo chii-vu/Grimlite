@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://lsgfp2mh8rop"]
+[gd_scene load_steps=7 format=3 uid="uid://lsgfp2mh8rop"]
 
 [ext_resource type="Script" path="res://mvc/Game.gd" id="1_sb6n7"]
+[ext_resource type="PackedScene" uid="uid://b2v4afte3a5lg" path="res://mvc/model/weapon/Hammer.tscn" id="2_vfjbm"]
 [ext_resource type="Script" path="res://mvc/systems/EnemySpawnerSystem.gd" id="3_mvaxx"]
+[ext_resource type="Script" path="res://mvc/systems/WeaponSpawnerSystem.gd" id="4_rq8t2"]
 [ext_resource type="PackedScene" uid="uid://bf87butm262kw" path="res://mvc/model/enemy/Eyeball.tscn" id="4_xhn5g"]
 [ext_resource type="PackedScene" uid="uid://x363ipybqtxk" path="res://mvc/model/Player.tscn" id="5_f3cu6"]
 
@@ -12,7 +14,13 @@ script = ExtResource("1_sb6n7")
 script = ExtResource("3_mvaxx")
 enemy_prefab = ExtResource("4_xhn5g")
 
-[node name="Player" parent="." instance=ExtResource("5_f3cu6")]
+[node name="WeaponSpawnerSystem" type="Node" parent="."]
+script = ExtResource("4_rq8t2")
+hammer_prefab = ExtResource("2_vfjbm")
+
+[node name="LocalPlayer" parent="." instance=ExtResource("5_f3cu6")]
+collision_layer = 1
+collision_mask = 1
 motion_mode = 1
 
 [node name="EnemyHolderNode" type="Node2D" parent="."]

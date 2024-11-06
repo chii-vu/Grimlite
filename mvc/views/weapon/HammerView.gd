@@ -1,5 +1,5 @@
 extends Node2D
-class_name WhipView
+class_name HammerView
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,3 +11,7 @@ func _process(delta: float) -> void:
 	
 	# doesn't really need to do anything special
 	pass
+
+
+func slam_effect() -> void:
+	$Sprite2D/AnimationPlayer.play("slam")

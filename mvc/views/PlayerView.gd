@@ -10,4 +10,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	# Only play the "Idle" animation as we aren’t handling other states for now
+	#this is for the SHIP, not the actual Player
 	animated_sprite.play("Idle")
+
+
+#functions called in controller (Game.gd)
+func move_left() -> void:
+	$Sprite2D/AnimationPlayer.play("walk_left")
+
+func move_right() -> void:
+	$Sprite2D/AnimationPlayer.play("walk_right")
+
+func no_input() -> void:
+	$Sprite2D/AnimationPlayer.pause()
