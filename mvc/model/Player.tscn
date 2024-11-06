@@ -213,7 +213,7 @@ texture_filter = 1
 texture_repeat = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_byemn")
-animation = &"Idle"
+animation = &"Warp"
 speed_scale = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerView"]
