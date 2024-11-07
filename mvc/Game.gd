@@ -5,7 +5,7 @@ class_name Game
 @onready var player: Player = $LocalPlayer  # Reference to the Player node
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
 @onready var player_animation = $LocalPlayer/PlayerView
-@onready var hammer_animation = $Hammer/HammerView
+#@onready var hammer_animation = $Hammer/HammerView
 @onready var weapon_spawner: WeaponSpawnerSystem = $WeaponSpawnerSystem
 
 
@@ -74,6 +74,6 @@ func _handle_auto_attack(delta: float) -> void:
 func _auto_attack() -> void:
 	print("Automatic attack triggered")
 	
-	#hammer_animation.slam_effect()
+	#d.slam_effect()
 	
 	# Implement auto-attack logic, e.g., creating an attack area
