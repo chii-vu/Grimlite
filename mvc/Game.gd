@@ -5,7 +5,7 @@ class_name Game
 @onready var player: Player = $LocalPlayer  # Reference to the Player node
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
 @onready var player_animation = $LocalPlayer/PlayerView
-@onready var hammer_animation = $Hammer/HammerView
+#@onready var hammer_animation = $Hammer/HammerView
 @onready var weapon_spawner: WeaponSpawnerSystem = $WeaponSpawnerSystem
 var screen_size: Vector2
 
