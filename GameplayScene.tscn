@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdopx0hcp0mqx"]
+[gd_scene load_steps=3 format=3 uid="uid://cdopx0hcp0mqx"]
 
+[ext_resource type="Texture2D" uid="uid://bci3x2vqo1p1u" path="res://assets/land_prototype.png" id="2_d0g5i"]
 [ext_resource type="PackedScene" uid="uid://lsgfp2mh8rop" path="res://mvc/Game.tscn" id="2_prymh"]
 
 [node name="GameplayScene" type="Node2D"]
@@ -18,3 +19,10 @@ offset_left = -150.0
 offset_bottom = 23.0
 grow_horizontal = 0
 text = "Lunar Labs"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1402, 788)
+texture = ExtResource("2_d0g5i")
