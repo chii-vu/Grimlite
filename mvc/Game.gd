@@ -66,8 +66,11 @@ func _handle_movement(delta: float) -> void:
 	player.velocity = player.velocity.normalized() * player_speed
 	player.move_and_slide()
 	
+	## could maybe be done a bit better
+	var player_size = Vector2(76, 114)
+	
 	# clamp player position within screen
-	player.position.clamp(Vector2.ZERO, screen_size)
+	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
 
 func _handle_auto_attack(delta: float) -> void:
 	# Automatic attack logic
