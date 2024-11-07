@@ -54,9 +54,11 @@ max_contacts_reported = 2
 script = ExtResource("1_c684f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_jd46a")
 
 [node name="HammerView" type="Node2D" parent="."]
+scale = Vector2(5, 5)
 script = ExtResource("2_g0vi1")
 
 [node name="Sprite2D" type="Sprite2D" parent="HammerView"]
