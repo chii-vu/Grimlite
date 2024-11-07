@@ -6,7 +6,7 @@ class_name PlayerView
 
 func _ready() -> void:
 	# Ensure the player view is visible on start
-	animated_sprite.visible = true
+	animated_sprite.visible = false
 
 func _process(delta: float) -> void:
 	# Only play the "Idle" animation as we aren’t handling other states for now

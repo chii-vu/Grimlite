@@ -208,6 +208,7 @@ player = NodePath("..")
 animated_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerView"]
+visible = false
 texture_filter = 1
 texture_repeat = 1
 scale = Vector2(2, 2)
