@@ -41,7 +41,6 @@ func _get_new_screen_size() -> void:
 
 func _process(delta: float) -> void:
 	_handle_movement(delta)
-	_handle_auto_attack(delta)
 
 func _handle_movement(delta: float) -> void:
 	if !player:
@@ -71,17 +70,3 @@ func _handle_movement(delta: float) -> void:
 	
 	# clamp player position within screen
 	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
-
-func _handle_auto_attack(delta: float) -> void:
-	# Automatic attack logic
-	attack_timer += delta
-	if attack_timer >= attack_interval:
-		attack_timer = 0
-		_auto_attack()
-
-func _auto_attack() -> void:
-	print("Automatic attack triggered")
-	
-	#hammer_animation.slam_effect()
-	
-	# Implement auto-attack logic, e.g., creating an attack area
