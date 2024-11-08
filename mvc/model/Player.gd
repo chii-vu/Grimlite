@@ -8,6 +8,8 @@ var dead: bool = false  # Player status
 var hori_direction: int = 1 # -1: left, 1: right
 var direction: Vector2 = Vector2(0, 0)
 
+signal hit
+
 func _ready() -> void:
 	print("Player is ready.")
 
