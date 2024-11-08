@@ -9,9 +9,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(Vector2.ZERO, true)
+	# if it collides with an enemy, queue_free it and add to score
 	if collision:
 		if collision.get_collider().is_in_group("enemies"):
 			collision.get_collider().call("queue_free")
+			# increase score
+			Hud.score += 1
 	
 	#if get_slide_collision_count():
 		#queue_free()

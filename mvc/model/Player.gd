@@ -6,7 +6,7 @@ class_name Player
 @export var health: float = 1.0  # Player health, adjust as needed
 var dead: bool = false  # Player status
 var hori_direction: int = 1 # -1: left, 1: right
-var direction: Vector2 = Vector2(0, 0)
+var direction: Vector2 = Vector2(1, 0)
 
 signal hit
 

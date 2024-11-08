@@ -31,6 +31,7 @@ func _ready() -> void:
 	if player:
 		print("Player is ready with position:", player.position)
 		player.add_to_group("player")
+		player.hit.connect(_start_player_invincibility)
 	else:
 		print("Error: Player node not found.")
 	
@@ -60,6 +61,9 @@ func _handle_movement(_delta: float) -> void:
 		player.velocity.x += 1
 		player_animation.move_right()
 	
+	if Input.is_action_pressed("Shoot"):
+		print(Hud.score)
+	
 	if player.velocity != Vector2.ZERO:
 		player.direction = player.velocity
 	
@@ -73,10 +77,12 @@ func _handle_movement(_delta: float) -> void:
 	# clamp player position within screen
 	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
 	
-	player.hit.connect(_start_player_invincibility)
 
 
 func _start_player_invincibility() -> void:
+	# decrease score
+	Hud.score -= 1
+	
 	# stop player from colliding w/ enemies
 	player.set_collision_layer_value(1, false)
 	
