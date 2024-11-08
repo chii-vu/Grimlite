@@ -29,6 +29,7 @@ func _ready() -> void:
 	
 	if player:
 		print("Player is ready with position:", player.position)
+		player.add_to_group("player")
 	else:
 		print("Error: Player node not found.")
 	

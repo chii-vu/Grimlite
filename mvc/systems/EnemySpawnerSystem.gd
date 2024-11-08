@@ -20,11 +20,9 @@ var player: Player  # Reference to the player node
 #######################
 
 func _physics_process(delta: float) -> void:
-	# process homing enemies (that path directly @ player
+	# make homing enemies go towards player
 	for nd in get_tree().get_nodes_in_group("homing enemy"):
 		nd.velocity = (player.position - nd.position).normalized() * nd.speed
-		nd.move_and_slide()
-	pass
 
 ##########################
 ## ENEMY SPAWNING BLOCK ##

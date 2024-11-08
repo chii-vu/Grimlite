@@ -10,6 +10,13 @@ var player: Player
 func _ready() -> void:
 	pass  # Initialization code if needed
 
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+	for i in get_slide_collision_count():
+		if get_slide_collision(i).get_collider().is_in_group("player"):
+			print("enemy collided with player")
+
+
 func set_player(player_ref: Player) -> void:
 	player = player_ref
 	print("Player reference set in Eyeball:", player)
@@ -19,4 +26,3 @@ func set_player(player_ref: Player) -> void:
 		print("Passing player reference to EyeballView.")
 	else:
 		print("Error: EyeballView not found as a child of Eyeball.")
-		
