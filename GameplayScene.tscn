@@ -23,6 +23,7 @@ text = "Lunar Labs"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(1402, 788)
+scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_d0g5i")

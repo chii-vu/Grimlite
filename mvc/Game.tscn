@@ -19,9 +19,7 @@ script = ExtResource("4_rq8t2")
 hammer_prefab = ExtResource("2_vfjbm")
 
 [node name="LocalPlayer" parent="." instance=ExtResource("5_f3cu6")]
-collision_layer = 1
 collision_mask = 1
-motion_mode = 1
 
 [node name="EnemyHolderNode" type="Node2D" parent="."]
 
