@@ -39,7 +39,7 @@ func _ready() -> void:
 func _get_new_screen_size() -> void:
 	screen_size = get_viewport().get_visible_rect().size
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
 
 func _handle_movement(delta: float) -> void:
