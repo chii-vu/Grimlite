@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 GlobalSoundsManager="*res://GlobalSoundsManager.tscn"
+Hud="*res://hud.gd"
 
 [input]
 
