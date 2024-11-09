@@ -15,19 +15,19 @@ What Has Been Done Since Project Pitch:
 
 2. Development Milestones
 - Asset Prototypes: Added initial asset prototypes for development.
+- Background: Add a game background and scale it to fit the screen.
 - MVC Boilerplate: Integrated skeleton code from MVC demo as the project’s boilerplate.
 - Player Character Art: Created player character skin and animations.
 - Player Movement Implementation: Implemented player movement with WASD input mapping.
-- Monster Spawning Settings: Adjusted monster spawn settings and synced changes.
-- Enemy Behaviour: Implemented enemy-seeking behaviour and set up enemy speed.
+- Enemy Spawning: Set up enemy spawning and movement.
+- Enemy Behaviour: Implemented enemy-seeking behaviour, with enemies following the player.
 - Weapon Implementation: plan player attack mechanics, including attack spawning and lifetime.
+- Camera: Set up a static camera with wall boundaries.
+- Points System: Create a system to adjust points based on player hits and actions.
 
 3. Remaining Tasks
 - Player Collision: Ensure the weapon bypasses player collision and kills enemies on contact.
-- Weapon Scaling: Adjust weapon scale to be slightly larger.
+- Difficulty Scaling: Implement a difficulty scaling system for enemy speed and spawn rate.
+- Level Progression: Add a level progression system.
 - Bullets: Implement a one-hit system for bullets to kill enemies on impact.
-- Background: Add a free asset for the game background.
-- Enemy Spawning: Fix overlapping enemies by switching EyeballView to local control, considering RigidBody2D or signals.
 - Player Death Consequence: Add a consequence for the player when hit by an enemy.
-- Points System: Create a system to adjust points based on player hits and actions.
-- Camera: Set up a static camera with wall boundaries.
