@@ -84,14 +84,14 @@ func _get_random_spawn_position() -> Vector2:
 		1:
 			# Bottom edge
 			spawn_position.x = random.randf_range(0, viewport_size.x)
-			spawn_position.y = viewport_size.y + 50
+			spawn_position.y = viewport_size.y - 50
 		2:
 			# Left edge
 			spawn_position.x = -50
 			spawn_position.y = random.randf_range(0, viewport_size.y)
 		3:
 			# Right edge
-			spawn_position.x = viewport_size.x + 50
+			spawn_position.x = viewport_size.x - 50
 			spawn_position.y = random.randf_range(0, viewport_size.y)
 
 	return spawn_position
