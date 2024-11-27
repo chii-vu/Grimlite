@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://de6ivkd5llphe"]
 
-[ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="1_h53xh"]
-[ext_resource type="Script" path="res://mvc/StartMenu.gd" id="1_vxv4v"]
-[ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="2_3xubo"]
+[ext_resource type="Script" path="res://StartMenu.gd" id="1_8wp1a"]
+[ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="2_fc2ej"]
+[ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="3_r0nwm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gs4q"]
-texture = ExtResource("1_h53xh")
+texture = ExtResource("2_fc2ej")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udsm0"]
 
@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vxv4v")
+script = ExtResource("1_8wp1a")
 
 [node name="MenuPanel" type="Panel" parent="."]
 modulate = Color(0.552956, 0.552956, 0.552956, 1)
@@ -63,7 +63,7 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0.603922, 0.121569, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.603922, 0.121569, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_3xubo")
+theme_override_fonts/font = ExtResource("3_r0nwm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_udsm0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y1ywj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3xjce")
@@ -77,7 +77,7 @@ size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0.603922, 0.121569, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.603922, 0.121569, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_3xubo")
+theme_override_fonts/font = ExtResource("3_r0nwm")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_udsm0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y1ywj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3xjce")
@@ -98,7 +98,7 @@ offset_right = 31.5
 offset_bottom = -93.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_3xubo")
+theme_override_fonts/font = ExtResource("3_r0nwm")
 theme_override_font_sizes/font_size = 61
 text = "GRIMLITE"
 
