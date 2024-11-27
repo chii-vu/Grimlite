@@ -1,12 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://de6ivkd5llphe"]
+[gd_scene load_steps=7 format=3 uid="uid://de6ivkd5llphe"]
 
 [ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="1_h53xh"]
+[ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="2_3xubo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gs4q"]
 texture = ExtResource("1_h53xh")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xjce"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udsm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1ywj"]
 bg_color = Color(0.6, 1, 0.6, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xjce"]
+bg_color = Color(0, 0.603922, 0.121569, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -38,9 +48,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = -25.0
+offset_top = 32.0
 offset_right = 44.0
-offset_bottom = 25.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -48,7 +58,13 @@ theme_override_constants/separation = 10
 [node name="Start" type="Button" parent="VBoxMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3xubo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udsm0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y1ywj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3xjce")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3xjce")
 text = "Start
 "
@@ -56,7 +72,29 @@ text = "Start
 [node name="Exit" type="Button" parent="VBoxMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3xubo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y1ywj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3xjce")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3xjce")
 text = "Exit
 "
+
+[node name="GameName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -116.0
+offset_right = 31.5
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3xubo")
+theme_override_font_sizes/font_size = 61
+text = "GRIMLITE"
