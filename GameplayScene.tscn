@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://lsgfp2mh8rop" path="res://mvc/Game.tscn" id="2_prymh"]
 
 [node name="GameplayScene" type="Node2D"]
+process_mode = 1
 
 [node name="Game" parent="." instance=ExtResource("2_prymh")]
 
