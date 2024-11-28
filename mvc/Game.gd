@@ -5,7 +5,6 @@ class_name Game
 @onready var player: Player = $LocalPlayer  # Reference to the Player node
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
 @onready var player_animation = $LocalPlayer/PlayerView
-#@onready var hammer_animation = $Hammer/HammerView
 @onready var weapon_spawner: WeaponSpawnerSystem = $WeaponSpawnerSystem
 var screen_size: Vector2
 
@@ -62,7 +61,7 @@ func _handle_movement(_delta: float) -> void:
 		player_animation.move_right()
 	
 	if Input.is_action_pressed("Shoot"):
-		print(Hud.score)
+		print($"../HUD".score)
 	
 	if player.velocity != Vector2.ZERO:
 		player.direction = player.velocity
@@ -76,12 +75,11 @@ func _handle_movement(_delta: float) -> void:
 	
 	# clamp player position within screen
 	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
-	
 
 
 func _start_player_invincibility() -> void:
 	# decrease score
-	Hud.score -= 1
+	Hud._dec_score()
 	
 	# stop player from colliding w/ enemies
 	player.set_collision_layer_value(1, false)

@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_collision_count():
 		if get_slide_collision(i).get_collider().is_in_group("player"):
 			player.emit_signal("hit")
+			Hud._inc_score()
 			print("enemy collided with player")
 
 

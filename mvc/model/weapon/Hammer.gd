@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider().is_in_group("enemies"):
 			collision.get_collider().call("queue_free")
 			# increase score
-			Hud.score += 1
+			Hud._inc_score()
 	
 	#if get_slide_collision_count():
 		#queue_free()
