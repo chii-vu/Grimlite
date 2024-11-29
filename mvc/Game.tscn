@@ -13,6 +13,8 @@ script = ExtResource("1_sb6n7")
 [node name="EnemySpawnerSystem" type="Node" parent="."]
 script = ExtResource("3_mvaxx")
 enemy_prefab = ExtResource("4_xhn5g")
+spawn_interval = null
+max_enemies = null
 
 [node name="WeaponSpawnerSystem" type="Node" parent="."]
 script = ExtResource("4_rq8t2")

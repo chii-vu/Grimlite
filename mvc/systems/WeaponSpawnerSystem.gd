@@ -25,9 +25,7 @@ func _process(delta: float) -> void:
 
 func set_player(player_ref: Player) -> void:
 	player = player_ref
-	if player:
-		print("Player reference set in WeaponSpawnerSystem: ", player)
-	else:
+	if !player:
 		print("Error: Player reference is null in WeaponSpawnerSystem.set_player .")
 
 ################

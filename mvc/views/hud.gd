@@ -22,7 +22,7 @@ func _inc_score() -> void:
 
 
 func _dec_score() -> void:
-	if (score >= 0):
+	if (score > 0):
 		score -= 1
 	$ScoreCounter.set_text("Score: %s" % score)
 	return

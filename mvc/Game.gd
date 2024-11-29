@@ -16,21 +16,24 @@ var attack_timer: float = 0.0
 func _ready() -> void:
 	# Set player reference in the enemy spawner system
 	if enemy_spawner:
-		print("EnemySpawner found. Setting player reference.")
+		#print("EnemySpawner found. Setting player reference.")
 		enemy_spawner.set_player(player)
 	else:
 		print("Error: EnemySpawner not found. Check the node path.")
 	
 	if weapon_spawner:
-		print("WeaponSpawner found. Setting player reference.")
+		#print("WeaponSpawner found. Setting player reference.")
 		weapon_spawner.set_player(player)
 	else:
 		print("Error: WeaponSpawner not found. Check the node path.")
 	
 	if player:
-		print("Player is ready with position:", player.position)
+		#print("Player is ready with position:", player.position)
 		player.add_to_group("player")
 		player.hit.connect(_start_player_invincibility)
+		# initialize invuln timer
+		#player.invuln_timer.wait_time = player_invuln_time
+		#player.invuln_timer.timeout.connect(_end_player_invincibility)
 	else:
 		print("Error: Player node not found.")
 	
@@ -38,13 +41,15 @@ func _ready() -> void:
 	screen_size = get_viewport().get_visible_rect().size
 	get_viewport().size_changed.connect(_get_new_screen_size)
 
+
 func _get_new_screen_size() -> void:
 	screen_size = get_viewport().get_visible_rect().size
+
 
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
 
-func _handle_movement(_delta: float) -> void:
+func _handle_movement(delta:float) -> void:
 	if !player:
 		print("Error: Player reference is missing in _handle_movement.")
 	# Handle player movement based on input
@@ -59,30 +64,36 @@ func _handle_movement(_delta: float) -> void:
 	if Input.is_action_pressed("ui_right"):
 		player.velocity.x += 1
 		player_animation.move_right()
-	
-	if Input.is_action_pressed("Shoot"):
-		print($"../HUD".score)
-	
+		
 	if player.velocity != Vector2.ZERO:
 		player.direction = player.velocity
 	
 	# Normalize movement and apply speed
 	player.velocity = player.velocity.normalized() * player_speed
-	player.move_and_slide()
+	player.move_and_collide(player.velocity * delta)
+	
+	if player.ishit:
+		player.ishit = false
+		print("player collide")
+		_start_player_invincibility()
 	
 	## could maybe be done a bit better
 	var player_size = Vector2(76, 114)
 	
 	# clamp player position within screen
 	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
-
+	
+	
 
 func _start_player_invincibility() -> void:
+	# stop player from colliding w/ enemies
+	# player.set_collision_layer_value(1, false)
+	player.set_collision_mask_value(2, false)
+	
 	# decrease score
 	Hud._dec_score()
+	print("player hit!")
 	
-	# stop player from colliding w/ enemies
-	player.set_collision_layer_value(1, false)
 	
 	# start timer to end invincibility
 	var timer = Timer.new()
@@ -93,7 +104,8 @@ func _start_player_invincibility() -> void:
 
 func _end_player_invincibility(timer:Timer) -> void:
 	# make player collidable w/ enemies again
-	player.set_collision_layer_value(1, true)
+	# player.set_collision_layer_value(1, true)
+	player.set_collision_mask_value(2, false)
 	player.remove_child(timer)
 	timer.queue_free()
 	return
