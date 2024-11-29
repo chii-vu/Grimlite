@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://de6ivkd5llphe"]
+[gd_scene load_steps=9 format=3 uid="uid://de6ivkd5llphe"]
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_8wp1a"]
 [ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="2_fc2ej"]
 [ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="3_r0nwm"]
+[ext_resource type="Texture2D" uid="uid://bpaxlph7sgwo6" path="res://assets/eye_sprite.png" id="4_18o6r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gs4q"]
 texture = ExtResource("2_fc2ej")
@@ -50,9 +51,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = 32.0
+offset_top = 168.0
 offset_right = 44.0
-offset_bottom = 88.0
+offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -92,15 +93,41 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -116.0
-offset_right = 31.5
-offset_bottom = -93.0
+offset_left = -163.0
+offset_top = -135.0
+offset_right = 163.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_r0nwm")
 theme_override_font_sizes/font_size = 61
 text = "GRIMLITE"
+
+[node name="GameDescription" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -12.0
+offset_right = 217.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r0nwm")
+text = "The light fades, and the swarm awakens.
+Fight to survive, scavenge the ruins, and grow stronger—
+but every triumph feeds the dark.
+
+How long before it consumes you?"
+horizontal_alignment = 1
+
+[node name="EyeSprite" type="Sprite2D" parent="."]
+position = Vector2(360, 184)
+scale = Vector2(0.650943, 0.66)
+texture = ExtResource("4_18o6r")
 
 [connection signal="pressed" from="VBoxMenuButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxMenuButtons/Exit" to="." method="_on_exit_pressed"]
