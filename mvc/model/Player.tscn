@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://mvc/model/Player.gd" id="1_i0ayj"]
 [ext_resource type="Script" path="res://mvc/views/PlayerView.gd" id="3_1kh2r"]
 [ext_resource type="Texture2D" uid="uid://b45ooahysl3ww" path="res://assets/PlayerShip Spritesheet (32x32, 17 frames).png" id="3_u3t4c"]
-[ext_resource type="Texture2D" uid="uid://duevexs3sg5g0" path="res://assets/walk_cycle_prototype.png" id="4_11l76"]
+[ext_resource type="Texture2D" uid="uid://bba20pjpy2j4o" path="res://assets/viking_walk.png" id="4_nflpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc60u"]
 size = Vector2(76, 114)
@@ -156,9 +156,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qal3g"]
 resource_name = "walk_left"
-length = 0.5
 loop_mode = 1
-step = 0.0
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -166,17 +165,16 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.245455, 0.25, 0.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.222414, 0.25, 0.475207, 0.5, 0.718536, 0.75, 0.979246),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 2, 3, 3]
+"values": [3, 3, 4, 4, 5, 5, 4, 4]
 }
 
 [sub_resource type="Animation" id="Animation_ie8q7"]
 resource_name = "walk_right"
-length = 0.5
 loop_mode = 1
-step = 0.0
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -184,10 +182,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.247441, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.247441, 0.25, 0.46986, 0.5, 0.726848, 0.75, 1.00121),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 1, 1]
+"values": [0, 0, 1, 1, 2, 2, 1, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_208ts"]
@@ -222,8 +220,8 @@ animation = &"Warp"
 speed_scale = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerView"]
-texture = ExtResource("4_11l76")
-hframes = 2
+texture = ExtResource("4_nflpt")
+hframes = 3
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerView/Sprite2D"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duevexs3sg5g0"
-path="res://.godot/imported/walk_cycle_prototype.png-6b6a4e92a19df59ac19c211b20715857.ctex"
+uid="uid://bba20pjpy2j4o"
+path="res://.godot/imported/viking_walk.png-f501b675c367b214c298d6890760c049.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/walk_cycle_prototype.png"
-dest_files=["res://.godot/imported/walk_cycle_prototype.png-6b6a4e92a19df59ac19c211b20715857.ctex"]
+source_file="res://assets/viking_walk.png"
+dest_files=["res://.godot/imported/viking_walk.png-f501b675c367b214c298d6890760c049.ctex"]
 
 [params]
 

@@ -23,3 +23,6 @@ func move_right() -> void:
 
 func no_input() -> void:
 	$Sprite2D/AnimationPlayer.pause()
+
+func continue_moving() -> void:
+	$Sprite2D/AnimationPlayer.play()
