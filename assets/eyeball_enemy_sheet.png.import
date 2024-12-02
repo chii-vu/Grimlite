@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6ki6g53g8ep1"
-path="res://.godot/imported/eye_sprite_prototype_sheet.png-921366df05a3e4b0a2c3c4d788069fa5.ctex"
+uid="uid://b88og62iusdeb"
+path="res://.godot/imported/eyeball_enemy_sheet.png-97cc3c28bed6c7ba91a9a195752104af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eye_sprite_prototype_sheet.png"
-dest_files=["res://.godot/imported/eye_sprite_prototype_sheet.png-921366df05a3e4b0a2c3c4d788069fa5.ctex"]
+source_file="res://assets/eyeball_enemy_sheet.png"
+dest_files=["res://.godot/imported/eyeball_enemy_sheet.png-97cc3c28bed6c7ba91a9a195752104af.ctex"]
 
 [params]
 
