@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8h7lnufb2ojx"
-path="res://.godot/imported/player_walk_with_damage.png-a9fb3485ee98ab4ee43dab7f269a375e.ctex"
+uid="uid://bgitsntrf4hfy"
+path="res://.godot/imported/cat_enemy_sprites.png-7c294145458a45367e9b411460c60419.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player_walk_with_damage.png"
-dest_files=["res://.godot/imported/player_walk_with_damage.png-a9fb3485ee98ab4ee43dab7f269a375e.ctex"]
+source_file="res://assets/cat_enemy_sprites.png"
+dest_files=["res://.godot/imported/cat_enemy_sprites.png-7c294145458a45367e9b411460c60419.ctex"]
 
 [params]
 
