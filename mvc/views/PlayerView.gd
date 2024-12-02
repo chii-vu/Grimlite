@@ -28,11 +28,7 @@ func continue_moving() -> void:
 	$Sprite2D/AnimationPlayer.play()
 
 func damage_left() -> void:
-	var current_ani = $Sprite2D/AnimationPlayer.current_animation
 	$Sprite2D/AnimationPlayer.play("damage_left")
-	$Sprite2D/AnimationPlayer.queue(current_ani)
 	
 func damage_right() -> void:
-	var current_ani = $Sprite2D/AnimationPlayer.current_animation
 	$Sprite2D/AnimationPlayer.play("damage_right")
-	$Sprite2D/AnimationPlayer.queue(current_ani)
