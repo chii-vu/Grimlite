@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://de6ivkd5llphe"]
+[gd_scene load_steps=21 format=3 uid="uid://de6ivkd5llphe"]
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_8wp1a"]
 [ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="2_fc2ej"]
 [ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="3_r0nwm"]
-[ext_resource type="Texture2D" uid="uid://bpaxlph7sgwo6" path="res://assets/eye_sprite.png" id="4_18o6r"]
+[ext_resource type="Texture2D" uid="uid://b88og62iusdeb" path="res://assets/eyeball_enemy_sheet.png" id="4_18o6r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gs4q"]
 texture = ExtResource("2_fc2ej")
@@ -23,6 +23,92 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5btao"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(256, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1wis"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(192, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkomj"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(128, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl7at"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(64, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qyov"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(0, 100, 64, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqla1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5btao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1wis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkomj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl7at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qyov")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tmgp"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(0, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5oa8"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(64, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0or1"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(128, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62iyi"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(192, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62tfm"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(256, 0, 64, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wejrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tmgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5oa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0or1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62iyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62tfm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -124,10 +210,15 @@ but every triumph feeds the dark.
 How long before it consumes you?"
 horizontal_alignment = 1
 
-[node name="EyeSprite" type="Sprite2D" parent="."]
-position = Vector2(360, 184)
-scale = Vector2(0.650943, 0.66)
-texture = ExtResource("4_18o6r")
+[node name="Left Facing Eyeball" type="AnimatedSprite2D" parent="."]
+position = Vector2(792, 184)
+sprite_frames = SubResource("SpriteFrames_xqla1")
+animation = &"Idle"
+
+[node name="Right Facing Eyeball" type="AnimatedSprite2D" parent="."]
+position = Vector2(352, 280)
+sprite_frames = SubResource("SpriteFrames_wejrh")
+animation = &"Idle"
 
 [connection signal="pressed" from="VBoxMenuButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxMenuButtons/Exit" to="." method="_on_exit_pressed"]
