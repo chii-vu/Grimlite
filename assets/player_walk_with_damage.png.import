@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bba20pjpy2j4o"
-path="res://.godot/imported/viking_walk.png-f501b675c367b214c298d6890760c049.ctex"
+uid="uid://c8h7lnufb2ojx"
+path="res://.godot/imported/player_walk_with_damage.png-a9fb3485ee98ab4ee43dab7f269a375e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/viking_walk.png"
-dest_files=["res://.godot/imported/viking_walk.png-f501b675c367b214c298d6890760c049.ctex"]
+source_file="res://assets/player_walk_with_damage.png"
+dest_files=["res://.godot/imported/player_walk_with_damage.png-a9fb3485ee98ab4ee43dab7f269a375e.ctex"]
 
 [params]
 
