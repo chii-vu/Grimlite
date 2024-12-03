@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cct7fd1rn6qqj"]
+[gd_scene load_steps=2 format=3 uid="uid://cct7fd1rn6qqj"]
 
 [ext_resource type="Script" path="res://GlobalSoundsManager.gd" id="1_lff4k"]
-[ext_resource type="AudioStream" path="res://assets/Shoot Bullet Sound from freesound.org 344312__musiclegends__laser-shoot7.wav" id="1_now6v"]
-[ext_resource type="AudioStream" path="res://assets/Explosion sound from freesound.org 259962__thehorriblejoke__8-bit-explosion.wav" id="2_qa2l6"]
 
 [node name="GlobalSoundsManager" type="Node"]
 script = ExtResource("1_lff4k")
 
 [node name="Bullet" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_now6v")
 
 [node name="Explosion" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_qa2l6")
