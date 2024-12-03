@@ -7,6 +7,8 @@ class_name Player
 var dead: bool = false  # Player status
 var hori_direction: int = 1 # -1: left, 1: right
 var direction: Vector2 = Vector2(1, 0)
+var ishit: bool = false
+@onready var invuln_timer: Timer = $InvulnTimer
 
 signal hit
 

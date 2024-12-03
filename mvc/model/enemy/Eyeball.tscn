@@ -103,8 +103,10 @@ _data = {
 [node name="Eyeball" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
+collision_priority = 10.0
 motion_mode = 1
 wall_min_slide_angle = 0.0
+platform_on_leave = 2
 script = ExtResource("1_23g8y")
 speed = 75.0
 

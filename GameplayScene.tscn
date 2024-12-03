@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdopx0hcp0mqx"]
+[gd_scene load_steps=4 format=3 uid="uid://cdopx0hcp0mqx"]
 
+[ext_resource type="PackedScene" uid="uid://bmaroo3f1goxn" path="res://mvc/views/hud.tscn" id="2_bgu1p"]
 [ext_resource type="Texture2D" uid="uid://bci3x2vqo1p1u" path="res://assets/land_prototype.png" id="2_d0g5i"]
 [ext_resource type="PackedScene" uid="uid://lsgfp2mh8rop" path="res://mvc/Game.tscn" id="2_prymh"]
 
@@ -9,16 +10,7 @@
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Name" type="Label" parent="HUD"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -150.0
-offset_bottom = 23.0
-grow_horizontal = 0
-text = "Lunar Labs"
+[node name="HUD" parent="." instance=ExtResource("2_bgu1p")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

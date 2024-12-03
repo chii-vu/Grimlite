@@ -38,9 +38,7 @@ func _process(delta: float) -> void:
 func set_player(player_ref: Player) -> void:
 	# Update the reference to the player
 	player = player_ref
-	if player:
-		print("Player reference set in EnemySpawnerSystem:", player)
-	else:
+	if !player:
 		print("Error: Player reference is null in set_player.")
 
 func get_active_enemy_count() -> int:
