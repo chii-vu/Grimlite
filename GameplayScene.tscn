@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cdopx0hcp0mqx"]
 
-[ext_resource type="PackedScene" uid="uid://bmaroo3f1goxn" path="res://mvc/views/hud.tscn" id="2_bgu1p"]
+[ext_resource type="PackedScene" path="res://mvc/views/hud.tscn" id="2_bgu1p"]
 [ext_resource type="Texture2D" uid="uid://bci3x2vqo1p1u" path="res://assets/land_prototype.png" id="2_d0g5i"]
 [ext_resource type="PackedScene" uid="uid://lsgfp2mh8rop" path="res://mvc/Game.tscn" id="2_prymh"]
 
