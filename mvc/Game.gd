@@ -56,15 +56,23 @@ func _handle_movement(delta:float) -> void:
 	player.velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_up"):
 		player.velocity.y -= 1
+		player_animation.continue_moving()
 	if Input.is_action_pressed("ui_down"):
 		player.velocity.y += 1
+		player_animation.continue_moving()
 	if Input.is_action_pressed("ui_left"):
 		player.velocity.x -= 1
 		player_animation.move_left()
 	if Input.is_action_pressed("ui_right"):
 		player.velocity.x += 1
 		player_animation.move_right()
-		
+	
+	if (Input.get_vector("ui_right","ui_left","ui_up","ui_down"))==Vector2.ZERO: 
+		player_animation.no_input()
+	
+	if Input.is_action_pressed("Shoot"):
+		print(Hud.score)
+	
 	if player.velocity != Vector2.ZERO:
 		player.direction = player.velocity
 	

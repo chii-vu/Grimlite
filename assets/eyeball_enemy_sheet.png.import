@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duevexs3sg5g0"
-path="res://.godot/imported/walk_cycle_prototype.png-6b6a4e92a19df59ac19c211b20715857.ctex"
+uid="uid://b88og62iusdeb"
+path="res://.godot/imported/eyeball_enemy_sheet.png-97cc3c28bed6c7ba91a9a195752104af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/walk_cycle_prototype.png"
-dest_files=["res://.godot/imported/walk_cycle_prototype.png-6b6a4e92a19df59ac19c211b20715857.ctex"]
+source_file="res://assets/eyeball_enemy_sheet.png"
+dest_files=["res://.godot/imported/eyeball_enemy_sheet.png-97cc3c28bed6c7ba91a9a195752104af.ctex"]
 
 [params]
 

@@ -23,3 +23,12 @@ func move_right() -> void:
 
 func no_input() -> void:
 	$Sprite2D/AnimationPlayer.pause()
+
+func continue_moving() -> void:
+	$Sprite2D/AnimationPlayer.play()
+
+func damage_left() -> void:
+	$Sprite2D/AnimationPlayer.play("damage_left")
+	
+func damage_right() -> void:
+	$Sprite2D/AnimationPlayer.play("damage_right")

@@ -1,0 +1,224 @@
+[gd_scene load_steps=21 format=3 uid="uid://de6ivkd5llphe"]
+
+[ext_resource type="Script" path="res://StartMenu.gd" id="1_8wp1a"]
+[ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="2_fc2ej"]
+[ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="3_r0nwm"]
+[ext_resource type="Texture2D" uid="uid://b88og62iusdeb" path="res://assets/eyeball_enemy_sheet.png" id="4_18o6r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gs4q"]
+texture = ExtResource("2_fc2ej")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udsm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1ywj"]
+bg_color = Color(0.6, 1, 0.6, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xjce"]
+bg_color = Color(0, 0.603922, 0.121569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5btao"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(256, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1wis"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(192, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkomj"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(128, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl7at"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(64, 100, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qyov"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(0, 100, 64, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xqla1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5btao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1wis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkomj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl7at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qyov")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tmgp"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(0, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5oa8"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(64, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0or1"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(128, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62iyi"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(192, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62tfm"]
+atlas = ExtResource("4_18o6r")
+region = Rect2(256, 0, 64, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wejrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tmgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5oa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0or1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62iyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62tfm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8wp1a")
+
+[node name="MenuPanel" type="Panel" parent="."]
+modulate = Color(0.552956, 0.552956, 0.552956, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0gs4q")
+
+[node name="VBoxMenuButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = 168.0
+offset_right = 44.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Start" type="Button" parent="VBoxMenuButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_r0nwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udsm0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y1ywj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3xjce")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xjce")
+text = "Start
+"
+
+[node name="Exit" type="Button" parent="VBoxMenuButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.603922, 0.121569, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_r0nwm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udsm0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y1ywj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3xjce")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3xjce")
+text = "Exit
+"
+
+[node name="GameName" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -135.0
+offset_right = 163.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r0nwm")
+theme_override_font_sizes/font_size = 61
+text = "GRIMLITE"
+
+[node name="GameDescription" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -12.0
+offset_right = 217.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r0nwm")
+text = "The light fades, and the swarm awakens.
+Fight to survive, scavenge the ruins, and grow stronger—
+but every triumph feeds the dark.
+
+How long before it consumes you?"
+horizontal_alignment = 1
+
+[node name="Left Facing Eyeball" type="AnimatedSprite2D" parent="."]
+position = Vector2(792, 184)
+sprite_frames = SubResource("SpriteFrames_xqla1")
+animation = &"Idle"
+
+[node name="Right Facing Eyeball" type="AnimatedSprite2D" parent="."]
+position = Vector2(352, 280)
+sprite_frames = SubResource("SpriteFrames_wejrh")
+animation = &"Idle"
+
+[connection signal="pressed" from="VBoxMenuButtons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxMenuButtons/Exit" to="." method="_on_exit_pressed"]

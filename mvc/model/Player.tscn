@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://x363ipybqtxk"]
+[gd_scene load_steps=27 format=3 uid="uid://x363ipybqtxk"]
 
 [ext_resource type="Script" path="res://mvc/model/Player.gd" id="1_i0ayj"]
 [ext_resource type="Script" path="res://mvc/views/PlayerView.gd" id="3_1kh2r"]
 [ext_resource type="Texture2D" uid="uid://b45ooahysl3ww" path="res://assets/PlayerShip Spritesheet (32x32, 17 frames).png" id="3_u3t4c"]
-[ext_resource type="Texture2D" uid="uid://duevexs3sg5g0" path="res://assets/walk_cycle_prototype.png" id="4_11l76"]
+[ext_resource type="Texture2D" uid="uid://beeu0f2a04y4x" path="res://assets/Player_sheet.png" id="4_eww17"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4b00j"]
 radius = 15.95
@@ -155,9 +155,40 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_gdgu5"]
+resource_name = "damage_left"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 7]
+}
+
+[sub_resource type="Animation" id="Animation_o7oce"]
+resource_name = "damage_right"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 3]
+}
+
 [sub_resource type="Animation" id="Animation_qal3g"]
 resource_name = "walk_left"
-length = 0.5
 loop_mode = 1
 step = 0.0
 tracks/0/type = "value"
@@ -167,17 +198,16 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.245455, 0.25, 0.375),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.239751, 0.25, 0.476017, 0.5, 0.733982, 0.75, 0.993169),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [2, 2, 3, 3]
+"values": [4, 4, 5, 5, 6, 6, 5, 5]
 }
 
 [sub_resource type="Animation" id="Animation_ie8q7"]
 resource_name = "walk_right"
-length = 0.5
 loop_mode = 1
-step = 0.0
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -185,15 +215,17 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.247441, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.247441, 0.25, 0.46986, 0.5, 0.726848, 0.75, 1.00121),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 0, 1, 1]
+"values": [0, 0, 1, 1, 2, 2, 1, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_208ts"]
 _data = {
 "RESET": SubResource("Animation_rjgqi"),
+"damage_left": SubResource("Animation_gdgu5"),
+"damage_right": SubResource("Animation_o7oce"),
 "walk_left": SubResource("Animation_qal3g"),
 "walk_right": SubResource("Animation_ie8q7")
 }
@@ -226,8 +258,8 @@ animation = &"Warp"
 speed_scale = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerView"]
-texture = ExtResource("4_11l76")
-hframes = 2
+texture = ExtResource("4_eww17")
+hframes = 4
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerView/Sprite2D"]
