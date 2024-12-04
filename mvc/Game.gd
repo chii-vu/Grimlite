@@ -89,7 +89,7 @@ func _handle_movement(delta:float) -> void:
 	var player_size = Vector2(76, 114)
 	
 	# clamp player position within screen
-	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
+	#player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
 	
 	
 

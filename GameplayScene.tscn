@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://mvc/views/hud.tscn" id="2_bgu1p"]
 [ext_resource type="PackedScene" uid="uid://lsgfp2mh8rop" path="res://mvc/Game.tscn" id="2_prymh"]
 [ext_resource type="Texture2D" uid="uid://d4gy7gkldc6ek" path="res://assets/background_tileset.png" id="4_lscxi"]
-[ext_resource type="Shader" uid="uid://0ak6nb8edvfb" path="res://GameplayScene.tres" id="5_qhroo"]
+[ext_resource type="Shader" uid="uid://dpq18g0aeyq1m" path="res://GameplayScene.tres" id="5_qhroo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o54wc"]
 texture = ExtResource("4_lscxi")
@@ -26,8 +26,6 @@ shader = ExtResource("5_qhroo")
 [node name="GameplayScene" type="Node2D"]
 
 [node name="Game" parent="." instance=ExtResource("2_prymh")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource("2_bgu1p")]
 
