@@ -110,11 +110,10 @@ script = ExtResource("1_i0ayj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4b00j")
 
-[node name="PlayerView" type="Node2D" parent="." node_paths=PackedStringArray("player", "animated_sprite")]
+[node name="PlayerView" type="Node2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(0, -3)
 script = ExtResource("3_1kh2r")
 player = NodePath("..")
-animated_sprite = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerView"]
 texture = ExtResource("4_eww17")
@@ -125,3 +124,5 @@ vframes = 2
 libraries = {
 "": SubResource("AnimationLibrary_208ts")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
