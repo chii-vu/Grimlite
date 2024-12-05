@@ -81,7 +81,19 @@ func _handle_movement(delta:float) -> void:
 	if player.ishit:
 		player.ishit = false
 		print("player collide")
+		player.health -= 1
+		Hud.set_player_health(player.health)
 		_start_player_invincibility()
+	
+	if player.health <= 0:
+		weapon_spawner.hammer_interval = 100
+		player.set_collision_layer_value(1, false)
+		player.set_collision_mask_value(2, false)
+		player.visible = false
+		var tm = Timer.new()
+		add_child(tm)
+		tm.timeout.connect(_to_title_screen)
+		tm.start(1.5)
 	
 	## could maybe be done a bit better
 	var player_size = Vector2(76, 114)
@@ -89,13 +101,16 @@ func _handle_movement(delta:float) -> void:
 	# clamp player position within screen
 	player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
 	
-	
+
+
+func _to_title_screen():
+	get_tree().change_scene_to_file("res://StartMenu.tscn")
+
 
 func _start_player_invincibility() -> void:
 	# stop player from colliding w/ enemies
 	player.set_collision_layer_value(1, false)
 	player.set_collision_mask_value(2, false)
-	
 	# decrease score
 	Hud._dec_score()
 	print("player hit!")
