@@ -70,29 +70,30 @@ func _spawn_enemy() -> void:
 		new_enemy.set_player(player)
 
 func _get_random_spawn_position() -> Vector2:
-	# Generate a random position around the edges of the viewport
-	var viewport_size = get_viewport().get_visible_rect().size
+	var camera = get_viewport().get_camera_2d()
 	var spawn_position = Vector2()
 
-	# Randomly choose a position along the edge of the screen
-	var edge = random.randi_range(0, 3)
-	match edge:
-		0:
-			# Top edge
-			spawn_position.x = random.randf_range(0, viewport_size.x)
-			spawn_position.y = -50
-		1:
-			# Bottom edge
-			spawn_position.x = random.randf_range(0, viewport_size.x)
-			spawn_position.y = viewport_size.y - 50
-		2:
-			# Left edge
-			spawn_position.x = -50
-			spawn_position.y = random.randf_range(0, viewport_size.y)
-		3:
-			# Right edge
-			spawn_position.x = viewport_size.x - 50
-			spawn_position.y = random.randf_range(0, viewport_size.y)
+	if camera:
+		# Get the visible rectangle of the camera
+		var viewport_rect = Rect2(
+			camera.global_position - (camera.zoom * get_viewport().get_visible_rect().size / 2),
+			camera.zoom * get_viewport().get_visible_rect().size
+		)
+
+		var edge = random.randi_range(0, 3)
+		match edge:
+			0:  # Top edge
+				spawn_position.x = random.randf_range(viewport_rect.position.x, viewport_rect.position.x + viewport_rect.size.x)
+				spawn_position.y = viewport_rect.position.y - 100
+			1:  # Bottom edge
+				spawn_position.x = random.randf_range(viewport_rect.position.x, viewport_rect.position.x + viewport_rect.size.x)
+				spawn_position.y = viewport_rect.position.y + viewport_rect.size.y + 100
+			2:  # Left edge
+				spawn_position.x = viewport_rect.position.x - 100
+				spawn_position.y = random.randf_range(viewport_rect.position.y, viewport_rect.position.y + viewport_rect.size.y)
+			3:  # Right edge
+				spawn_position.x = viewport_rect.position.x + viewport_rect.size.x + 100
+				spawn_position.y = random.randf_range(viewport_rect.position.y, viewport_rect.position.y + viewport_rect.size.y)
 
 	return spawn_position
 	

@@ -15,10 +15,10 @@ func _process(delta: float) -> void:
 	if player:
 		# Update any visual elements based on the player's position if needed
 		var facing = (player.global_position - position).normalized()
-		if facing.x < 0:
+		if facing.y > 0:
 			$Sprite2D/AnimationPlayer.play("move_left")
 		else:
 			$Sprite2D/AnimationPlayer.play("move_right")
-		pass
+		
 	else:
 		print("Player reference is null in CatView.")
