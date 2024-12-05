@@ -31,6 +31,7 @@ volume_db = -4.931
 stream = ExtResource("5_f3tq6")
 volume_db = -0.335
 pitch_scale = 0.57
+parameters/looping = true
 
 [node name="cat damage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_nbfjj")
