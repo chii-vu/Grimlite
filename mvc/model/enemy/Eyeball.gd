@@ -25,3 +25,7 @@ func set_player(player_ref: Player) -> void:
 		#print("Passing player reference to EyeballView.")
 	else:
 		print("Error: EyeballView not found as a child of Eyeball.")
+
+#used to identify who is colliding with hammer
+func is_eyeball() -> void:
+	pass

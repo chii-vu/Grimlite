@@ -6,6 +6,7 @@ class_name Game
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
 @onready var player_animation = $LocalPlayer/PlayerView
 @onready var weapon_spawner: WeaponSpawnerSystem = $WeaponSpawnerSystem
+@onready var sounds_manager = $"/root/GlobalSoundsManager"
 var screen_size: Vector2
 
 @export var player_speed: float = 200.0  # Player movement speed
@@ -130,6 +131,7 @@ func _start_player_invincibility() -> void:
 	player.add_child(timer)
 	timer.timeout.connect(_end_player_invincibility.bind(timer, invinc_timer))
 	timer.start(player_invuln_time)
+	
 	return
 
 func _end_player_invincibility(timer:Timer, invinc_timer:Timer) -> void:

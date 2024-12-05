@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://de6ivkd5llphe"]
+[gd_scene load_steps=21 format=3 uid="uid://x8gudx0mmek6"]
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_8wp1a"]
 [ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="2_fc2ej"]
