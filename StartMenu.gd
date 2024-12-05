@@ -2,9 +2,11 @@ extends Control
 
 @onready var sounds_manager = $"/root/GlobalSoundsManager"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"Left Facing Eyeball".play("Idle")
+	$"Right Facing Eyeball".play("Idle")
+
 	sounds_manager.sfx_menu_music()
 
 

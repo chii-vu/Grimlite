@@ -211,14 +211,16 @@ How long before it consumes you?"
 horizontal_alignment = 1
 
 [node name="Left Facing Eyeball" type="AnimatedSprite2D" parent="."]
-position = Vector2(792, 184)
+position = Vector2(792, 168)
 sprite_frames = SubResource("SpriteFrames_xqla1")
 animation = &"Idle"
+frame_progress = 0.0900874
 
 [node name="Right Facing Eyeball" type="AnimatedSprite2D" parent="."]
-position = Vector2(352, 280)
+position = Vector2(328, 248)
 sprite_frames = SubResource("SpriteFrames_wejrh")
 animation = &"Idle"
+frame_progress = 0.718239
 
 [connection signal="pressed" from="VBoxMenuButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxMenuButtons/Exit" to="." method="_on_exit_pressed"]
