@@ -13,19 +13,19 @@ script = ExtResource("1_lff4k")
 
 [node name="Smash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ype13")
-volume_db = -10.919
+volume_db = -8.919
 
 [node name="Eyeball Pop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_rjvv6")
-volume_db = -25.175
+volume_db = -22.175
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4olg6")
-volume_db = -3.247
+volume_db = -5.247
 
 [node name="Background Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_oc1mw")
-volume_db = 0.021
+volume_db = -4.931
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_f3tq6")
