@@ -17,12 +17,15 @@ func sfx_background() -> void:
 
 func sfx_menu_music() -> void:
 	$"Menu Music".play()
-	
+
 func sfx_menu_music_stop() -> void:
 	$"Menu Music".stop()
-	
+
+func sfx_background_music_stop() -> void:
+	$"Background Music".stop()
+
 func sfx_eyeball() -> void:
 	$"Eyeball Pop".play()
-	
+
 func sfx_cat() -> void:
 	$"cat damage".play()

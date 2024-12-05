@@ -96,6 +96,7 @@ func _handle_movement(delta:float) -> void:
 
 func _to_title_screen():
 	Hud.hide()
+	sounds_manager.sfx_background_music_stop()
 	get_tree().change_scene_to_file("res://StartMenu.tscn")
 
 
@@ -113,7 +114,7 @@ func _start_player_invincibility() -> void:
 		weapon_spawner.hammer_interval = 100
 		player.set_collision_layer_value(1, false)
 		player.set_collision_mask_value(2, false)
-		player.visible = false
+		player_animation.anim_player_death()
 		var tm = Timer.new()
 		add_child(tm)
 		tm.timeout.connect(_to_title_screen)

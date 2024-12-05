@@ -5,6 +5,8 @@ class_name PlayerView
 @export var animated_sprite: AnimatedSprite2D  # Reference to the AnimatedSprite2D node
 
 func _ready() -> void:
+	$Sprite2D.visible = true
+	$"Death Sprite".visible = false
 	pass
 
 func _process(delta: float) -> void:
@@ -30,3 +32,10 @@ func damage_left() -> void:
 	
 func damage_right() -> void:
 	$Sprite2D/AnimationPlayer.play("damage_right")
+	
+func anim_player_death() -> void:
+	$Sprite2D.visible = false
+	$"Death Sprite".visible = true
+	$"Death Sprite/AnimationPlayer".play("character_death")
+
+	
