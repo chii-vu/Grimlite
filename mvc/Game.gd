@@ -41,7 +41,6 @@ func _ready() -> void:
 	# setup screen size and update it when player resizes screen
 	screen_size = get_viewport().get_visible_rect().size
 	get_viewport().size_changed.connect(_get_new_screen_size)
-	sounds_manager.sfx_background()
 
 
 func _get_new_screen_size() -> void:

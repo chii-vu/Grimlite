@@ -20,3 +20,9 @@ func sfx_menu_music() -> void:
 	
 func sfx_menu_music_stop() -> void:
 	$"Menu Music".stop()
+	
+func sfx_eyeball() -> void:
+	$"Eyeball Pop".play()
+	
+func sfx_cat() -> void:
+	$"cat damage".play()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cct7fd1rn6qqj"]
+[gd_scene load_steps=8 format=3 uid="uid://cct7fd1rn6qqj"]
 
 [ext_resource type="Script" path="res://GlobalSoundsManager.gd" id="1_lff4k"]
 [ext_resource type="AudioStream" uid="uid://bgk8idkye3dtx" path="res://assets/SFX/381614__dorianmastin__snd_impactmediummetal03.wav" id="2_ype13"]
 [ext_resource type="AudioStream" uid="uid://s3byfum8c5a0" path="res://assets/SFX/413185__micahlg__male_hurt8.ogg" id="3_4olg6"]
+[ext_resource type="AudioStream" uid="uid://bn4dpurl1x3iy" path="res://assets/SFX/enemies/753169__geoff-bremner-audio__popping-bubble-wrap-3.wav" id="3_rjvv6"]
 [ext_resource type="AudioStream" uid="uid://d0ap1dcf8t6mi" path="res://assets/SFX/background/713035__seth_makes_sounds__some-game-music-120bpm.wav" id="4_oc1mw"]
 [ext_resource type="AudioStream" uid="uid://b64if4fsosh8k" path="res://assets/SFX/background/426699__fmceretta__i-am-dreaming-or-final-fantasy-menu-kinda-thing.mp3" id="5_f3tq6"]
 [ext_resource type="AudioStream" uid="uid://bvdycppgv0syk" path="res://assets/SFX/enemies/meoWWW.wav" id="6_nbfjj"]
@@ -12,9 +13,11 @@ script = ExtResource("1_lff4k")
 
 [node name="Smash" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ype13")
-volume_db = -7.189
+volume_db = -10.919
 
 [node name="Eyeball Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rjvv6")
+volume_db = -25.175
 
 [node name="Hurt" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4olg6")
