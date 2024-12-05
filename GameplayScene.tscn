@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=4 uid="uid://cdopx0hcp0mqx"]
 
-[ext_resource type="PackedScene" uid="uid://bmaroo3f1goxn" path="res://mvc/views/hud.tscn" id="2_bgu1p"]
+[ext_resource type="PackedScene" path="res://mvc/views/hud.tscn" id="2_bgu1p"]
 [ext_resource type="PackedScene" uid="uid://lsgfp2mh8rop" path="res://mvc/Game.tscn" id="2_prymh"]
 [ext_resource type="Texture2D" uid="uid://d4gy7gkldc6ek" path="res://assets/background_tileset.png" id="4_lscxi"]
-[ext_resource type="Shader" uid="uid://chr31joxqjrte" path="res://GameplayScene.tres" id="5_qhroo"]
+[ext_resource type="Shader" uid="uid://cbg47414evle0" path="res://GameplayScene.tres" id="5_qhroo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o54wc"]
 texture = ExtResource("4_lscxi")

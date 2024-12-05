@@ -8,6 +8,7 @@ class_name EnemySpawnerSystem
 
 # Enemy spawning
 @export var enemy_prefab: PackedScene  # Prefab for spawning enemies
+@export var cat_scene = preload("res://mvc/model/enemy/cat.tscn")
 @export var spawn_interval: float = 2.0  # Interval in seconds between spawns
 @export var max_enemies: int = 10  # Maximum number of active enemies
 
@@ -34,6 +35,7 @@ func _process(delta: float) -> void:
 		spawn_timer = 0
 		if get_active_enemy_count() < max_enemies:
 			_spawn_enemy()
+			_spawn_cat()
 
 func set_player(player_ref: Player) -> void:
 	# Update the reference to the player
@@ -93,3 +95,26 @@ func _get_random_spawn_position() -> Vector2:
 			spawn_position.y = random.randf_range(0, viewport_size.y)
 
 	return spawn_position
+	
+	
+func _spawn_cat() -> void:
+	if cat_scene == null:
+		print("Error: cat_scene is not set. Check Inspector settings.")
+		return
+	
+	var new_enemy = cat_scene.instantiate() as Cat
+	if new_enemy == null:
+		print("Error: Failed to instantiate enemy cat from prefab.")
+		return
+	
+	# Set a random spawn position outside the player's view
+	new_enemy.position = _get_random_spawn_position()
+
+	# Add the enemy to the scene tree and to a group for management
+	get_parent().add_child(new_enemy)
+	new_enemy.add_to_group("enemies")
+	new_enemy.add_to_group("homing enemy")
+	
+	# Now that the enemy is in the scene tree, set the player's reference
+	if new_enemy.has_method("set_player"):
+		new_enemy.set_player(player)
