@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://mvc/views/enemy/CatView.gd" id="3_rillp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orvma"]
-radius = 35.3394
-height = 92.9018
+radius = 28.6531
+height = 69.3738
 
 [sub_resource type="Animation" id="Animation_0sfvn"]
 length = 0.001
@@ -105,10 +105,10 @@ tracks/1/path = NodePath("../../CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.221329, 0.25, 0.467612, 0.5, 0.713895, 0.75, 0.960178, 1, 1.22281, 1.25, 1.4756),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(4, -3), Vector2(4, -3), Vector2(4, -7), Vector2(4, -7), Vector2(4, -12), Vector2(4, -12), Vector2(4, -16), Vector2(4, -16), Vector2(4, -12), Vector2(4, -12), Vector2(4, -3.8), Vector2(4, -3.8)]
+"times": PackedFloat32Array(0, 0.25, 0.470404, 0.5, 0.713013, 0.75, 0.973707, 1, 1.22382, 1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3, -5), Vector2(3, -5), Vector2(3, -5), Vector2(3, -9), Vector2(3, -9), Vector2(2, -10), Vector2(2, -10), Vector2(3, -9), Vector2(3, -9), Vector2(3, -5), Vector2(3, -5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -119,7 +119,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [1.06116]
 }
 
@@ -127,7 +127,7 @@ tracks/2/keys = {
 resource_name = "move_right"
 length = 1.5
 loop_mode = 1
-step = 0.25
+step = 0.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -135,7 +135,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.209556, 0.25, 0.473961, 0.513019, 0.722716, 0.75, 0.956301, 1, 1.21436, 1.25, 1.47396),
+"times": PackedFloat32Array(0, 0.209556, 0.25, 0.436444, 0.5, 0.722716, 0.75, 0.956301, 1, 1.21436, 1.25, 1.47396),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 0, 1, 1, 2, 2, 3, 3, 2, 2, 1, 1]
@@ -147,10 +147,10 @@ tracks/1/path = NodePath("../../CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.480632, 0.5, 0.729085, 0.75, 0.980793, 1, 1.22266, 1.22642, 1.25, 1.48063),
+"times": PackedFloat32Array(0, 0.234721, 0.25, 0.464632, 0.5, 0.711217, 0.75, 0.960111, 1, 1.21035, 1.25, 1.47598),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-5, -6), Vector2(-5, -6), Vector2(-5, -6), Vector2(-4, -11), Vector2(-4, -11), Vector2(-4, -15), Vector2(-4, -15), Vector2(-4.5, -8.5), Vector2(-4.5, -8.5), Vector2(-4, -11), Vector2(-5, -6), Vector2(-5, -6)]
+"update": 1,
+"values": [Vector2(-3, -4), Vector2(-3, -4), Vector2(-3, -5), Vector2(-3, -5), Vector2(-3, -8), Vector2(-3, -8), Vector2(-4, -12), Vector2(-4, -12), Vector2(-4, -8), Vector2(-4, -8), Vector2(-3, -5), Vector2(-3, -5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -161,7 +161,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [-1.12225]
 }
 
