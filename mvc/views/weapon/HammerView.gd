@@ -4,7 +4,7 @@ class_name HammerView
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalSoundsManager.sfx_bullet()
+	GlobalSoundsManager.sfx_hammer_hit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -6,6 +6,7 @@ class_name Game
 @onready var enemy_spawner: EnemySpawnerSystem = $EnemySpawnerSystem  # Reference to the enemy spawner
 @onready var player_animation = $LocalPlayer/PlayerView
 @onready var weapon_spawner: WeaponSpawnerSystem = $WeaponSpawnerSystem
+@onready var sounds_manager = $"/root/GlobalSoundsManager"
 var screen_size: Vector2
 
 @export var player_speed: float = 200.0  # Player movement speed
@@ -40,6 +41,7 @@ func _ready() -> void:
 	# setup screen size and update it when player resizes screen
 	screen_size = get_viewport().get_visible_rect().size
 	get_viewport().size_changed.connect(_get_new_screen_size)
+	sounds_manager.sfx_background()
 
 
 func _get_new_screen_size() -> void:
@@ -102,12 +104,15 @@ func _start_player_invincibility() -> void:
 	Hud._dec_score()
 	print("player hit!")
 	
+	#damage sound and animation flash
+	sounds_manager.sfx_player_hurt()
 	
 	# start timer to end invincibility
 	var timer = Timer.new()
 	player.add_child(timer)
 	timer.timeout.connect(_end_player_invincibility.bind(timer))
 	timer.start(player_invuln_time)
+	
 	return
 
 func _end_player_invincibility(timer:Timer) -> void:
