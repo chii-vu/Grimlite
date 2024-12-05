@@ -10,7 +10,7 @@ class_name EnemySpawnerSystem
 @export var enemy_prefab: PackedScene  # Prefab for spawning enemies
 @export var cat_scene = preload("res://mvc/model/enemy/cat.tscn")
 @export var spawn_interval: float = 2.0  # Interval in seconds between spawns
-@export var max_enemies: int = 10  # Maximum number of active enemies
+@export var max_enemies: int = 3  # Maximum number of active enemies
 
 @onready var random = RandomNumberGenerator.new()
 var spawn_timer: float = 0.0
