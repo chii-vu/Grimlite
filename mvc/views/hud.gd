@@ -13,7 +13,8 @@ func _process(delta: float) -> void:
 
 func _inc_score() -> void:
 	score += 1
-	$ScoreCounter.set_text("Score: %s\nHealth: %s" % score % player_health)
+	$ScoreCounter.set_text("Score: %s\nHealth: %s" % [score, player_health])
+	show()
 	return
 
 func _dec_score() -> void:
@@ -21,9 +22,11 @@ func _dec_score() -> void:
 		score -= 1
 	else:
 		player_health -= 1
-	$ScoreCounter.set_text("Score: %s\nHealth: %s" % score % player_health)
+	$ScoreCounter.set_text("Score: %s\nHealth: %s" % [score, player_health])
+	show()
 	return
 
 func set_player_health(hp: float) -> void:
 	player_health = hp
-	$ScoreCounter.set_text("Score: %s\nHealth: %s" % score % player_health)
+	$ScoreCounter.set_text("Score: %s\nHealth: %s" % [score, player_health])
+	show()

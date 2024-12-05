@@ -32,6 +32,7 @@ func _ready() -> void:
 		#print("Player is ready with position:", player.position)
 		player.add_to_group("player")
 		player.hit.connect(_start_player_invincibility)
+		Hud.set_player_health(player.health)
 	else:
 		print("Error: Player node not found.")
 	
@@ -75,28 +76,17 @@ func _handle_movement(delta:float) -> void:
 		player.direction = player.velocity
 	
 	# Normalize movement and apply speed
-	player.velocity = player.velocity.normalized() * player_speed
-	player.move_and_collide(player.velocity * delta)
+	if player.health > 0:
+		player.velocity = player.velocity.normalized() * player_speed
+		player.move_and_collide(player.velocity * delta)
 	
 	if player.ishit:
 		player.ishit = false
 		print("player collide")
-		player.health -= 1
-		Hud.set_player_health(player.health)
 		_start_player_invincibility()
 	
-	if player.health <= 0:
-		weapon_spawner.hammer_interval = 100
-		player.set_collision_layer_value(1, false)
-		player.set_collision_mask_value(2, false)
-		player.visible = false
-		var tm = Timer.new()
-		add_child(tm)
-		tm.timeout.connect(_to_title_screen)
-		tm.start(1.5)
-	
 	## could maybe be done a bit better
-	var player_size = Vector2(76, 114)
+	#var player_size = Vector2(76, 114)
 	
 	# clamp player position within screen
 	#player.position = player.position.clamp(-0.5*(screen_size - player_size), 0.5*(screen_size - player_size))
@@ -104,6 +94,7 @@ func _handle_movement(delta:float) -> void:
 
 
 func _to_title_screen():
+	Hud.hide()
 	get_tree().change_scene_to_file("res://StartMenu.tscn")
 
 
@@ -114,6 +105,19 @@ func _start_player_invincibility() -> void:
 	# decrease score
 	Hud._dec_score()
 	print("player hit!")
+	
+	player.health -= 1
+	Hud.set_player_health(player.health)
+	if player.health <= 0:
+		weapon_spawner.hammer_interval = 100
+		player.set_collision_layer_value(1, false)
+		player.set_collision_mask_value(2, false)
+		player.visible = false
+		var tm = Timer.new()
+		add_child(tm)
+		tm.timeout.connect(_to_title_screen)
+		tm.start(1)
+		return
 	
 	var invinc_timer = Timer.new()
 	player.add_child(invinc_timer)
