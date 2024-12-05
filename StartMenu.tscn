@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://x8gudx0mmek6"]
+[gd_scene load_steps=36 format=3 uid="uid://x8gudx0mmek6"]
 
 [ext_resource type="Script" path="res://StartMenu.gd" id="1_8wp1a"]
 [ext_resource type="Texture2D" uid="uid://cw6voudjkc2l1" path="res://assets/landproto.png" id="2_fc2ej"]
 [ext_resource type="FontFile" uid="uid://c61myo531a44m" path="res://assets/fonts/bloodcrow.ttf" id="3_r0nwm"]
 [ext_resource type="Texture2D" uid="uid://b88og62iusdeb" path="res://assets/eyeball_enemy_sheet.png" id="4_18o6r"]
+[ext_resource type="Texture2D" uid="uid://beeu0f2a04y4x" path="res://assets/Player_sheet.png" id="5_h2nfo"]
+[ext_resource type="Texture2D" uid="uid://bgitsntrf4hfy" path="res://assets/cat_enemy_sprites.png" id="6_k756t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0gs4q"]
 texture = ExtResource("2_fc2ej")
@@ -110,6 +112,100 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtstm"]
+atlas = ExtResource("5_h2nfo")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qykg2"]
+atlas = ExtResource("5_h2nfo")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ob4cr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtstm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qykg2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7cd5"]
+atlas = ExtResource("6_k756t")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixaiw"]
+atlas = ExtResource("6_k756t")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nypyu"]
+atlas = ExtResource("6_k756t")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqu2x"]
+atlas = ExtResource("6_k756t")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6yuen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7cd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixaiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nypyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqu2x")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efub2"]
+atlas = ExtResource("6_k756t")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gsfa"]
+atlas = ExtResource("6_k756t")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmhgv"]
+atlas = ExtResource("6_k756t")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry4lo"]
+atlas = ExtResource("6_k756t")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0ex7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efub2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gsfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmhgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry4lo")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -137,9 +233,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = 168.0
+offset_top = 184.0
 offset_right = 44.0
-offset_bottom = 224.0
+offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -180,9 +276,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -163.0
-offset_top = -135.0
+offset_top = -167.0
 offset_right = 163.0
-offset_bottom = -62.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_r0nwm")
@@ -197,9 +293,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -216.0
-offset_top = -12.0
+offset_top = -44.0
 offset_right = 217.0
-offset_bottom = 100.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_r0nwm")
@@ -211,16 +307,34 @@ How long before it consumes you?"
 horizontal_alignment = 1
 
 [node name="Left Facing Eyeball" type="AnimatedSprite2D" parent="."]
-position = Vector2(792, 168)
+position = Vector2(816, 136)
 sprite_frames = SubResource("SpriteFrames_xqla1")
 animation = &"Idle"
-frame_progress = 0.0900874
+frame_progress = 0.221351
 
 [node name="Right Facing Eyeball" type="AnimatedSprite2D" parent="."]
-position = Vector2(328, 248)
+position = Vector2(328, 216)
 sprite_frames = SubResource("SpriteFrames_wejrh")
 animation = &"Idle"
-frame_progress = 0.718239
+frame_progress = 0.849472
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+position = Vector2(216, 528)
+sprite_frames = SubResource("SpriteFrames_ob4cr")
+animation = &"Idle"
+frame_progress = 0.111061
+
+[node name="LSkull" type="AnimatedSprite2D" parent="."]
+position = Vector2(998, 568)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_6yuen")
+animation = &"Idle"
+
+[node name="RSkull" type="AnimatedSprite2D" parent="."]
+position = Vector2(878, 544)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_y0ex7")
+animation = &"Idle"
 
 [connection signal="pressed" from="VBoxMenuButtons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxMenuButtons/Exit" to="." method="_on_exit_pressed"]

@@ -6,6 +6,9 @@ extends Control
 func _ready() -> void:
 	$"Left Facing Eyeball".play("Idle")
 	$"Right Facing Eyeball".play("Idle")
+	$"Player".play("Idle")
+	$"RSkull".play("Idle")
+	$"LSkull".play("Idle")
 
 	sounds_manager.sfx_menu_music()
 
