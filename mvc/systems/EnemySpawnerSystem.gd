@@ -16,6 +16,10 @@ class_name EnemySpawnerSystem
 var spawn_timer: float = 0.0
 var player: Player  # Reference to the player node
 
+var difficulty_scaler: float = 1
+
+var difficulty_scaling_const: float = 0.05
+
 #######################
 ## ENEMY LOGIC BLOCK ##
 #######################
@@ -23,7 +27,7 @@ var player: Player  # Reference to the player node
 func _physics_process(delta: float) -> void:
 	# make homing enemies go towards player
 	for nd in get_tree().get_nodes_in_group("homing enemy"):
-		nd.velocity = (player.position - nd.position).normalized() * nd.speed
+		nd.velocity = (player.position - nd.position).normalized() * nd.speed * difficulty_scaler
 
 ##########################
 ## ENEMY SPAWNING BLOCK ##
@@ -31,11 +35,13 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	spawn_timer += delta
-	if spawn_timer >= spawn_interval:
+	if spawn_timer >= spawn_interval / difficulty_scaler:
+		difficulty_scaler += difficulty_scaling_const
 		spawn_timer = 0
-		if get_active_enemy_count() < max_enemies:
+		if get_active_enemy_count() < max_enemies * difficulty_scaler:
 			_spawn_enemy()
 			_spawn_cat()
+			
 
 func set_player(player_ref: Player) -> void:
 	# Update the reference to the player

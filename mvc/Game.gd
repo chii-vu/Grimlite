@@ -16,6 +16,8 @@ var attack_timer: float = 0.0
 @export var player_invuln_flash: float = 0.05 # invuln flash frequencing
 
 func _ready() -> void:
+	Hud.score = 0
+	
 	# Set player reference in the enemy spawner system
 	if enemy_spawner:
 		#print("EnemySpawner found. Setting player reference.")
