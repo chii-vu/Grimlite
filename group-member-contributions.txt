@@ -5,21 +5,22 @@ Members: Finch Nygren (jmn211), Louis Grimard (aiq395), Spencer Tracy (spt631), 
 Group Member Contributions:
 
 Finch (Art, Assets, Animations)
-
-- Completed prototype art for eyeball enemy.
-- Created animation frames for eyeball and entered them into the sprite sheet.
-- Created player character skin and animations.
-- Developed hammer animation graphics and spritesheet.
-- Added animation tracks for the eyeball enemy.
-- Created sketches of key frames for player walk cycle.
+- Completed art for enemies, player, and background.
+- Developed a tileable, infinite scrolling background.
+- Developed new skull enemy and updated enemy spritesheets.
+- Reworked sound effects and added new ones.
+- Matched sound effects to game actions.
+- Refined and polished the player walk cycle.
+- Added shadows to player and enemy sprites for visual depth.
 
 Louis (MVC POLICE + Code Support + Scene Layout)
-
-- Used skeleton code from MVC demo as boilerplate.
-- Helped troubleshoot Git remote pushes and syncing issues.
-- Set up initial structure and scene layout for the project.
-- Discussed MVC structure in virtual meetings and Git workflow.
-- Paired with other members to debug EyeballView animations.
+- Overwatched the MVC structure and codebase.
+- Updated player movement to use move_and_collide() for knockback effect.
+- Fixed scoring bug where points were deducted twice on hit.
+- Created a system to adjust points based on player hits and actions.
+- Implemented life and death mechanics for enemies and players, 
+including a scoring system and brief immunity on collision.
+- Implemented a difficulty scaling system for enemy speed and spawn rate.
 
 Spencer (Code/Algorithms)
 - Implemented player movement and input map.
@@ -30,9 +31,11 @@ Spencer (Code/Algorithms)
 - Set up player attack mechanics, including attack spawning and lifetime.
 
 Chi (QA/Project Planner)
-- Set up Git repository with permissions and added members.
+- Overlooked Git repository and contributions.
+- Ensured adherence to Git workflow and structure.
 - Coordinated project meetings and planning.
-- Created and managed a burndown chart, logging all completed tasks.
-- Establish group's general workflow and Git branching strategy.
 - Record meeting minutes and track progress.
-- Test implemnted features and report bugs.
+- Created a start menu screen with title, preambles, and game sprites.
+- Troubleshooted screen display issue where the game was showing
+up differently on different clients.
+- Test implemented features and report bugs.
