@@ -31,3 +31,31 @@ What Has Been Done Since Project Pitch:
 - Level Progression: Add a level progression system.
 - Bullets: Implement a one-hit system for bullets to kill enemies on impact.
 - Player Death Consequence: Add a consequence for the player when hit by an enemy.
+
+- What Has Been Done Since Prototype:
+1. Planning and Setup
+- Project Planning: Continue to meet as a team to check-in, plan next steps, and assign tasks.
+
+2. Development Milestones
+- Life/Death System: Implemented life and death mechanics for enemies and players, including 
+a scoring system and brief immunity on collision.
+- Title Screen: Added a start menu screen with title, preambles, and game sprites.
+- Enemy Creation: Introduced new skull enemy.
+- Enemy Scaling: Implemented different enemy speeds for diverse gameplay.
+- Infinite Background: Developed a tileable, infinite scrolling background.
+- SFX Updates: Added and modified sound effects to match game actions.
+- Knockback Effect: Updated weapon collision to knock enemies back, replacing 
+move_and_slide with move_and_collide().
+
+3. Animations and Visuals
+- Player Walk Animation: Refined and polished the player walk cycle.
+- Sprite Updates: Updated and refined spritesheets for player and enemies, 
+including adding shadows for improved visual depth.
+- Player Death Animation: Added dramatic explosion death animation for the player character.
+
+4. Bug Fixes
+- Scoring Bug: Fixed an issue where the scoring system was deducting points twice on hit.
+- Player-Enemy Collision: Ensured proper collision detection between the player and enemies.
+- Client Resizing Issues: Addressed and resolved client resizing issues to ensure smooth 
+gameplay experience.
+- Enemy Collision: Fixed bugs related to enemy collision with the player and with other enemies.
