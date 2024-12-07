@@ -4,38 +4,47 @@ Members: Finch Nygren (jmn211), Louis Grimard (aiq395), Spencer Tracy (spt631), 
 
 Group Member Contributions:
 
-Finch (Art, Assets, Animations)
-- Completed art for enemies, player, and background.
-- Developed a tileable, infinite scrolling background.
-- Developed new skull enemy and updated enemy spritesheets.
-- Reworked sound effects and added new ones.
-- Matched sound effects to game actions.
-- Refined and polished the player walk cycle.
-- Added shadows to player and enemy sprites for visual depth.
+Finch Nygren (Art, Assets, Animations)
+- Created prototype art for the eyeball enemy, including multiple iterations.
+- Designed animation frames for the eyeball and organized them into a sprite sheet.
+- Created detailed player character skins and animations.
+- Developed a hammer animation and integrated it into the player sprite sheet.
+- Sketched and polished key frames for the player walk cycle, ensuring fluid movement.
+- Designed and implemented a tileable, infinite-scrolling background.
+- Created new enemy designs, including the skull enemy, and updated spritesheets for consistency.
+- Reworked and matched sound effects to corresponding game actions.
+- Added animation tracks and refined transitions for the eyeball enemy.
+- Enhanced the visual depth of the game by adding shadows to player and enemy sprites.
 
-Louis (MVC POLICE + Code Support + Scene Layout)
-- Overwatched the MVC structure and codebase.
-- Updated player movement to use move_and_collide() for knockback effect.
-- Fixed scoring bug where points were deducted twice on hit.
-- Created a system to adjust points based on player hits and actions.
-- Implemented life and death mechanics for enemies and players, 
-including a scoring system and brief immunity on collision.
-- Implemented a difficulty scaling system for enemy speed and spawn rate.
+Louis Grimard (MVC Structure, Code Support, Scene Layout)
+- Used skeleton MVC code as a foundation for the project.
+- Set up initial scene layouts and game structure for cohesive development.
+- Monitored and enforced adherence to the MVC architecture during coding sessions.
+- Paired with Finch to debug animation playback issues in the EyeballView.
+- Assisted team members with Git remote push troubleshooting and repository synchronization.
+- Updated player movement mechanics to use move_and_collide() for a realistic knockback effect.
+- Implemented a life and death system for enemies and players, including a scoring mechanism.
+- Fixed a bug where points were deducted twice when a player was hit.
+- Developed a system to scale difficulty dynamically, increasing enemy speed and spawn 
+rate as the game progresses.
+- Facilitated virtual meetings to discuss MVC implementation and debugging.
 
-Spencer (Code/Algorithms)
-- Implemented player movement and input map.
-- Updated monster spawn settings and synced changes.
-- Implemented enemy-seeking behavior and speed.
-- Fixed an unused sound bug.
-- Developed initial enemy-spawning functionality.
-- Set up player attack mechanics, including attack spawning and lifetime.
+Spencer Tracy (Code/Algorithms)
+- Implemented player movement mechanics and mapped input for seamless controls.
+- Set up and refined the player attack system, managing attack spawning and lifetime.
+- Designed enemy behaviour, enabling enemies to seek and target the player.
+- Improved monster spawn logic to synchronize with game difficulty settings.
+- Debugged and resolved an unused sound bug that caused unexpected behaviour.
+- Created the foundation for enemy spawning, ensuring diverse and dynamic gameplay.
+- Adjusted spawn parameters for consistent enemy behaviour.
+- Integrated difficulty scaling into enemy, increasing speed and targeting accuracy over time.
 
-Chi (QA/Project Planner)
-- Overlooked Git repository and contributions.
-- Ensured adherence to Git workflow and structure.
-- Coordinated project meetings and planning.
-- Record meeting minutes and track progress.
-- Created a start menu screen with title, preambles, and game sprites.
-- Troubleshooted screen display issue where the game was showing
-up differently on different clients.
-- Test implemented features and report bugs.
+Chi Vu (QA, Project Planning)
+- Set up the Git repository, assigned permissions, and onboarded team members.
+- Developed the Git workflow and branching strategy for smooth collaboration.
+- Coordinated and documented project meetings, including action items and deadlines.
+- Created and managed a burndown chart to monitor task completion and progress.
+- Tested implemented features for functionality and usability, reporting issues promptly.
+- Designed a start menu with an engaging title, preamble, and themed game sprites.
+- Troubleshot a critical display issue where the game rendered inconsistently on different devices.
+- Established general team workflows, ensuring alignment across all project phases.
