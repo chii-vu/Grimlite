@@ -16,7 +16,7 @@ class_name EnemySpawnerSystem
 var spawn_timer: float = 0.0
 var player: Player  # Reference to the player node
 
-var difficulty_scaler: float = 1
+var difficulty_scaler: float = 0.5
 
 var difficulty_scaling_const: float = 0.05
 
